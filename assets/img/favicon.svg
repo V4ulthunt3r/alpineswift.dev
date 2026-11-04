@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .bg { fill: #EEF1F0; } .o { stroke: #16222A; } .c { stroke: #A87B57; } .i { stroke: #4F8AB0; }
+    @media (prefers-color-scheme: dark) { .bg { fill: #0E161B; } .o { stroke: #E4EAEC; } .c { stroke: #C99E78; } .i { stroke: #6FA9CF; } }
+  </style>
+  <rect class="bg" x="1" y="1" width="62" height="62" rx="18"/>
+  <rect class="o" x="3" y="3" width="58" height="58" rx="17" fill="none" stroke-width="3"/>
+  <rect class="c" x="11" y="8" width="44" height="44" rx="13" fill="none" stroke-width="2.4"/>
+  <rect class="c" x="19" y="12" width="30" height="30" rx="9" fill="none" stroke-width="2.4"/>
+  <rect class="i" x="27" y="15" width="16" height="16" rx="5" fill="none" stroke-width="2.8"/>
+  <circle cx="35" cy="23" r="3" fill="#D3352A"/>
+</svg>
