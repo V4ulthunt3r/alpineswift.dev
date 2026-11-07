@@ -40,7 +40,7 @@
   let colors = {};
   function readColors() {
     const cs = getComputedStyle(document.documentElement);
-    for (const k of ['paper', 'ink', 'contour', 'contour-index', 'ice', 'route', 'grid', 'zenith', 'sky', 'haze']) colors[k] = cs.getPropertyValue('--' + k).trim();
+    for (const k of ['paper', 'ink', 'contour', 'contour-index', 'ice', 'route', 'logo-facet', 'grid', 'zenith', 'sky', 'haze']) colors[k] = cs.getPropertyValue('--' + k).trim();
   }
   readColors();
 
@@ -137,7 +137,7 @@
         ctx.save(); ctx.globalAlpha = ta; ctx.lineJoin = 'round';
         partial(pts, tp);
         ctx.strokeStyle = '#fff'; ctx.lineWidth = 6; ctx.stroke();
-        ctx.strokeStyle = colors.route; ctx.setLineDash([12, 12]); ctx.stroke();
+        ctx.strokeStyle = colors['logo-facet']; ctx.setLineDash([12, 12]); ctx.stroke();
         ctx.restore();
       }
       ctx.setLineDash([]);
@@ -256,7 +256,8 @@
       const c = 1 - b.z;
       ctx.save();
       ctx.translate(b.x, b.y); ctx.rotate(Math.atan2(b.vy, b.vx)); ctx.scale(sc, sc);
-      ctx.fillStyle = `rgb(${18 + c * 70 | 0},${26 + c * 80 | 0},${33 + c * 95 | 0})`;
+      // white like the logo's swift; distant birds fade into the violet haze
+      ctx.fillStyle = `rgba(${255 - c * 40 | 0},${255 - c * 50 | 0},255,${(.5 + .5 * b.z).toFixed(2)})`;
       swiftPath(ctx, f);
       ctx.fill();
       ctx.restore();
@@ -267,9 +268,9 @@
       g.addColorStop(0, colors.zenith); g.addColorStop(.55, colors.sky); g.addColorStop(.92, colors.haze);
       ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
       const sun = ctx.createRadialGradient(W * .85, H * .72, 0, W * .85, H * .72, H * .6);
-      sun.addColorStop(0, 'rgba(255,240,220,.4)'); sun.addColorStop(1, 'rgba(255,240,220,0)');
+      sun.addColorStop(0, 'rgba(20,240,220,.22)'); sun.addColorStop(1, 'rgba(20,240,220,0)');
       ctx.fillStyle = sun; ctx.fillRect(0, 0, W, H);
-      const shades = ['rgba(160,186,202,.9)', 'rgba(112,142,166,.95)', 'rgba(60,90,112,1)'];
+      const shades = ['rgba(150,118,232,.85)', 'rgba(72,40,160,.95)', 'rgba(17,6,56,1)'];
       ridges.forEach((pts, L) => {
         ctx.fillStyle = shades[L]; ctx.beginPath(); ctx.moveTo(0, H);
         pts.forEach((y, i) => ctx.lineTo(i * 6, y));
@@ -311,6 +312,57 @@
     band.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') mouse = null; });
     if (daysEl && !reduce) daysEl.textContent = '0';
     return { el: band, resize, frame, draw };
+  })();
+
+
+  /* ---------- Summit logo: the swift flies in once, then glides ---------- */
+  (() => {
+    const svg = document.querySelector('[data-logo-anim]');
+    if (!svg || reduce || !('IntersectionObserver' in window)) return;
+    const clipR = svg.querySelector('.la-clip'), mtn = svg.querySelector('.la-mtn'), facet = svg.querySelector('.la-facet');
+    const glint = svg.querySelector('.la-glint'), bird = svg.querySelector('.la-bird'), wing = svg.querySelector('.la-wing');
+    const END = 2300, CX = 891, CY = 465, HEADING = -25, BX = [-1050, -700, -260, 0], BY = [300, 700, 120, 0];
+    let t = 0, idleT = 0, playing = false, seen = false, vis = false, raf = 0, last = 0;
+    const seg = (a, b) => clamp((t - a) / (b - a), 0, 1);
+    const outCubic = x => 1 - (1 - x) ** 3, outQuint = x => 1 - (1 - x) ** 5;
+    const outBack = x => 1 + 2.5 * (x - 1) ** 3 + 1.5 * (x - 1) ** 2;
+    const bez = (p, x) => { const u = 1 - x; return u * u * u * p[0] + 3 * u * u * x * p[1] + 3 * u * x * x * p[2] + x * x * x * p[3]; };
+    const bezD = (p, x) => { const u = 1 - x; return 3 * u * u * (p[1] - p[0]) + 6 * u * x * (p[2] - p[1]) + 3 * x * x * (p[3] - p[2]); };
+    function render() {
+      const m = outCubic(seg(0, 900));
+      clipR.setAttribute('y', 1100 - 540 * m);
+      mtn.setAttribute('transform', `translate(0 ${(36 * (1 - m)).toFixed(1)})`);
+      const f = seg(600, 1100);
+      facet.setAttribute('transform', `translate(665 740) scale(${outBack(f).toFixed(3)}) translate(-665 -740)`);
+      const g = seg(700, 1500);
+      glint.setAttribute('stroke-dashoffset', 150 - 1500 * outCubic(g));
+      glint.setAttribute('opacity', g > 0 && g < 1 ? Math.sin(Math.PI * g).toFixed(3) : 0);
+      const bRaw = seg(600, END), b = outQuint(bRaw);
+      const ang = Math.atan2(bezD(BY, b), bezD(BX, b)) * 180 / Math.PI;
+      const rot = (ang - HEADING) * (1 - clamp((bRaw - .82) / .18, 0, 1));
+      const sc = .55 + .45 * b, flick = 1 + .07 * Math.sin(t / 34) * (1 - b);
+      let ix = 0, iy = 0, ir = 0;
+      if (t >= END) { iy = -7 * Math.sin(idleT * 1.2); ir = 1.6 * Math.sin(idleT * 1.2 + .7); ix = 3 * Math.sin(idleT * .6); }
+      bird.setAttribute('transform', `translate(${(bez(BX, b) + ix).toFixed(1)} ${(bez(BY, b) + iy).toFixed(1)}) rotate(${(rot + ir).toFixed(2)} ${CX} ${CY}) translate(${CX} ${CY}) scale(${(sc * flick).toFixed(3)} ${sc.toFixed(3)}) translate(${-CX} ${-CY})`);
+      bird.setAttribute('opacity', Math.min(1, bRaw * 8));
+      // the wing facet catches the light once the swift has landed, an echo of the glacier
+      const w = seg(1950, 2300);
+      wing.setAttribute('opacity', w.toFixed(3));
+    }
+    function tick(now) {
+      const dt = last ? Math.min(64, now - last) : 16;
+      last = now;
+      if (playing) { t += dt; if (t >= END) { t = END; playing = false; } } else idleT += dt / 1000;
+      render();
+      raf = vis ? requestAnimationFrame(tick) : 0;
+      if (!raf) last = 0;
+    }
+    render(); // start hidden until the summit comes into view
+    new IntersectionObserver(es => es.forEach(e => {
+      vis = e.isIntersecting;
+      if (vis && !seen) { seen = true; t = 0; playing = true; }
+      if (vis && !raf) raf = requestAnimationFrame(tick);
+    }), { threshold: .35 }).observe(svg);
   })();
 
   /* ---------- Render loop: only animate what is on screen ---------- */

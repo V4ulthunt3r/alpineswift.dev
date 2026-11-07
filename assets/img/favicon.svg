@@ -1,12 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <style>
-    .bg { fill: #EEF1F0; } .o { stroke: #16222A; } .c { stroke: #A87B57; } .i { stroke: #4F8AB0; }
-    @media (prefers-color-scheme: dark) { .bg { fill: #0E161B; } .o { stroke: #E4EAEC; } .c { stroke: #C99E78; } .i { stroke: #6FA9CF; } }
-  </style>
-  <rect class="bg" x="1" y="1" width="62" height="62" rx="18"/>
-  <rect class="o" x="3" y="3" width="58" height="58" rx="17" fill="none" stroke-width="3"/>
-  <rect class="c" x="11" y="8" width="44" height="44" rx="13" fill="none" stroke-width="2.4"/>
-  <rect class="c" x="19" y="12" width="30" height="30" rx="9" fill="none" stroke-width="2.4"/>
-  <rect class="i" x="27" y="15" width="16" height="16" rx="5" fill="none" stroke-width="2.8"/>
-  <circle cx="35" cy="23" r="3" fill="#D3352A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254">
+  <rect width="1254" height="1254" rx="280" fill="#110638"/>
+  <g transform="translate(627 627) scale(1.08) translate(-612 -606)">
+    <path d="M88 1095 L617 621 L1068 1050 L665 740 L567 925 L509 862 Z" fill="#FFFFFF"/>
+    <path d="M665 740 L1068 1050 L722 900 Z" fill="#14F0DC"/>
+    <path d="M647 118 C700 225 820 350 975 402 C1000 390 1030 376 1058 377 C1074 378 1084 386 1088 393 L1106 401 C1082 403 1061 412 1047 429 C1040 440 1036 452 1035 461 C1100 540 1150 680 1135 812 C1115 690 1050 582 945 515 C870 545 800 585 737 628 L823 533 L678 546 C740 530 800 510 850 487 L875 463 C760 380 660 255 647 118 Z" fill="#FFFFFF"/>
+  </g>
 </svg>
