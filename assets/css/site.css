@@ -42,8 +42,9 @@
   --header-h: 64px;
   color-scheme: light;
 }
+/* Dark tokens: follow the system unless the visitor picked a theme (data-theme on <html>). Keep both blocks in sync. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: #0A0420;
     --paper-2: #120A2E;
     --ink: #EEEAFB;
@@ -67,6 +68,30 @@
     --haze: #6A2BD0;
     color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --paper: #0A0420;
+  --paper-2: #120A2E;
+  --ink: #EEEAFB;
+  --ink-2: #A69EC6;
+  --line: rgba(238, 234, 251, .13);
+  --contour: rgba(150, 120, 240, .3);
+  --contour-index: rgba(170, 140, 255, .66);
+  --ice: #14F0DC;
+  --route: #14F0DC;
+  --route-ink: #110638;
+  --route-text: #14F0DC;
+  --logo-facet: #14F0DC;
+  --sign: #EAE4FB;
+  --sign-ink: #110638;
+  --band: #150A3D;
+  --band-ink: #FFFFFF;
+  --band-glow: rgba(106, 43, 208, .5);
+  --grid: rgba(238, 234, 251, .05);
+  --zenith: #07021A;
+  --sky: #22105A;
+  --haze: #6A2BD0;
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -114,10 +139,19 @@ a { color: inherit; }
 .nav a:hover, .nav a[aria-current="true"] { color: var(--ink); }
 .nav .lang { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; border: 1px solid var(--line); padding: 4px 8px; color: var(--ink); }
 .nav .btn { padding: 9px 14px; font-size: .8rem; }
+/* Theme toggle: cycles auto -> light -> dark; the icon shows the current choice */
+.theme-btn { flex: none; margin-left: -6px; width: 36px; height: 36px; display: grid; place-items: center; padding: 0; background: none; border: 1px solid var(--line); color: var(--ink); cursor: pointer; transition: border-color .15s; }
+.theme-btn:hover { border-color: var(--ink-2); }
+.theme-btn svg { width: 18px; height: 18px; display: block; }
+.theme-btn svg g { display: none; }
+.theme-btn[data-mode="auto"] .ti-auto, .theme-btn[data-mode="light"] .ti-light, .theme-btn[data-mode="dark"] .ti-dark { display: inline; }
+.site-header .wrap > .brand:first-child + .theme-btn { margin-left: auto; }
 .menu-btn { display: none; margin-left: auto; background: none; border: 1px solid var(--line); color: var(--ink); width: 42px; height: 42px; cursor: pointer; padding: 0; }
 .menu-btn svg { width: 20px; height: 20px; display: block; margin: auto; }
 @media (max-width: 860px) {
-  .menu-btn { display: block; }
+  .site-header .wrap { gap: 10px; }
+  .menu-btn { display: block; order: 2; margin-left: 0; }
+  .theme-btn { order: 1; margin-left: auto; width: 42px; height: 42px; }
   .nav { position: fixed; inset: calc(var(--header-h) + env(safe-area-inset-top, 0px)) 0 auto; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 8px var(--gutter-r) 20px var(--gutter); display: none; }
   .nav.open { display: flex; }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; color: var(--ink); }
@@ -245,6 +279,10 @@ a { color: inherit; }
 @media (max-width: 900px) { .tools { grid-template-columns: 1fr; } }
 .tool { background: var(--paper-2); padding: 24px; display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px; min-width: 0; }
 .tool-icon { display: block; width: 72px; height: 72px; margin-bottom: 8px; }
+.tool-icon .ic-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tool-icon .ic-light { display: none; } :root:not([data-theme="light"]) .tool-icon .ic-dark { display: block; } }
+:root[data-theme="dark"] .tool-icon .ic-light { display: none; }
+:root[data-theme="dark"] .tool-icon .ic-dark { display: block; }
 .tool-icon img { display: block; width: 100%; height: 100%; border-radius: 22.37%; box-shadow: 0 0 0 1px var(--line), 0 6px 18px -8px rgba(17, 6, 56, .45); }
 .tool .meta { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
 .tool h3 { font-family: var(--f-display); font-stretch: 112%; font-weight: 780; font-size: 1.35rem; line-height: 1.1; }

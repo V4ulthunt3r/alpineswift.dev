@@ -2,6 +2,41 @@
 // Hero: contour map that morphs from a mountain into an app icon while scrolling.
 // Long haul: a flock of alpine swifts that follows the pointer.
 // Altimeter: page "altitude" interpolated between sections' data-alt values.
+// Theme: follows the system by default; the header button cycles auto -> light -> dark.
+// The choice lives in localStorage; a tiny inline script in <head> applies it before first paint.
+(() => {
+  const root = document.documentElement, btn = document.querySelector('[data-theme-toggle]');
+  const sys = matchMedia('(prefers-color-scheme: dark)');
+  const de = (root.lang || 'de').startsWith('de');
+  const names = de ? { auto: 'Automatisch (System)', light: 'Hell', dark: 'Dunkel' } : { auto: 'Automatic (system)', light: 'Light', dark: 'Dark' };
+  const metas = [...document.querySelectorAll('meta[name="theme-color"]')];
+  const metaMedia = metas.map(m => m.getAttribute('media'));
+  const order = ['auto', 'light', 'dark'];
+  let mode = root.dataset.theme === 'light' || root.dataset.theme === 'dark' ? root.dataset.theme : 'auto';
+
+  function apply(next, announce) {
+    mode = next;
+    if (mode === 'auto') delete root.dataset.theme; else root.dataset.theme = mode;
+    try { if (mode === 'auto') localStorage.removeItem('theme'); else localStorage.setItem('theme', mode); } catch (e) {}
+    // browser UI colour: per-system by default, fixed when the visitor picked a theme
+    metas.forEach((m, i) => {
+      if (mode === 'auto') { if (metaMedia[i]) m.setAttribute('media', metaMedia[i]); else m.removeAttribute('media'); }
+      else m.setAttribute('media', 'all');
+      m.setAttribute('content', (mode === 'auto' ? /dark/.test(metaMedia[i] || '') : mode === 'dark') ? '#0A0420' : '#F4F1FC');
+    });
+    if (btn) {
+      const label = (de ? 'Farbschema: ' : 'Colour scheme: ') + names[mode];
+      btn.dataset.mode = mode;
+      btn.setAttribute('aria-label', label + (de ? '. Wechseln' : '. Change'));
+      btn.title = label;
+    }
+    if (announce) document.dispatchEvent(new CustomEvent('themechange'));
+  }
+  apply(mode, false);
+  if (btn) btn.addEventListener('click', () => apply(order[(order.indexOf(mode) + 1) % order.length], true));
+  sys.addEventListener('change', () => { if (mode === 'auto') document.dispatchEvent(new CustomEvent('themechange')); });
+})();
+
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const lang = document.documentElement.lang || 'de';
@@ -378,7 +413,7 @@
     clearTimeout(rz);
     rz = setTimeout(() => scenes.forEach(sc => { sc.resize(); sc.draw(); }), 120);
   });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readColors(); scenes.forEach(sc => sc.draw()); });
+  document.addEventListener('themechange', () => { readColors(); scenes.forEach(sc => sc.draw()); });
   document.fonts && document.fonts.ready.then(() => Topo && Topo.draw());
 
   if (!reduce) {

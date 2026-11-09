@@ -19,6 +19,7 @@
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/onest-var.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
@@ -45,6 +46,7 @@
       <a class="lang" href="/" hreflang="de" lang="de">DE</a>
       <a class="btn primary" href="#contact">Start a project</a>
     </nav>
+    <button class="theme-btn" type="button" data-theme-toggle data-mode="auto" aria-label="Colour scheme: Automatic (system). Change"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><g class="ti-auto"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 0 0 14z" fill="currentColor" stroke="none"/></g><g class="ti-light"><circle cx="10" cy="10" r="3.6"/><path d="M10 1.5v2.2M10 16.3v2.2M1.5 10h2.2M16.3 10h2.2M4 4l1.6 1.6M14.4 14.4 16 16M4 16l1.6-1.6M14.4 5.6 16 4"/></g><g class="ti-dark"><path d="M16.5 12.4A7 7 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9z"/></g></svg></button>
   </div>
 </header>
 
@@ -202,21 +204,21 @@
       </div>
       <div class="tools">
         <article class="tool">
-          <picture class="tool-icon"><source srcset="/assets/img/tools/trail-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/tools/trail-light.svg" width="72" height="72" alt="Trail app icon" loading="lazy" decoding="async"></picture>
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/trail-light.svg" width="72" height="72" alt="Trail app icon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/trail-dark.svg" width="72" height="72" alt="" loading="lazy" decoding="async"></span>
           <p class="meta">Project management · every stage</p>
           <h3>Trail</h3>
           <p>Trail keeps the route on record: stages, tasks and decisions. Nothing gets lost between two meetings.</p>
           <p class="gain"><b>For you:</b> You always know where your project stands and what comes next.</p>
         </article>
         <article class="tool">
-          <picture class="tool-icon"><source srcset="/assets/img/tools/scout-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/assets/img/tools/scout-light.jpg" width="72" height="72" alt="Scout app icon" loading="lazy" decoding="async"></picture>
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/scout-light.jpg" width="72" height="72" alt="Scout app icon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/scout-dark.jpg" width="72" height="72" alt="" loading="lazy" decoding="async"></span>
           <p class="meta">Code quality · Stage 2</p>
           <h3>Scout</h3>
           <p>The scout goes ahead. Scout examines the code for bugs, security issues and sprawl, and shows where it needs work.</p>
           <p class="gain"><b>For you:</b> Fewer bugs after launch, and code other developers can take over later.</p>
         </article>
         <article class="tool">
-          <picture class="tool-icon"><source srcset="/assets/img/tools/beacon-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/assets/img/tools/beacon-light.jpg" width="72" height="72" alt="Beacon app icon" loading="lazy" decoding="async"></picture>
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/beacon-light.jpg" width="72" height="72" alt="Beacon app icon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/beacon-dark.jpg" width="72" height="72" alt="" loading="lazy" decoding="async"></span>
           <p class="meta">App Store optimization · launch &amp; care</p>
           <h3>Beacon</h3>
           <p>Beacon tracks keywords, rankings and competitors on the App Store and shows where your app can become easier to find.</p>
