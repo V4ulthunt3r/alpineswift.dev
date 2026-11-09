@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F5F1FD"/><stop offset="1" stop-color="#E7DFFA"/></linearGradient>
+    
+    <clipPath id="snow"><path d="M512 400 L426 520 L486 485 L498 515 L545 468 L604 490 Z"/></clipPath>
+    <clipPath id="rock"><path d="M0 905 L150 830 L190 850 L512 400 L840 720 L880 700 L1024 790 L1024 1024 L0 1024 Z"/></clipPath>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  
+  <path d="M0 760 L170 650 L210 675 L310 610 L440 700 L440 1024 L0 1024 Z" fill="#CDB9F6"/>
+  <path d="M1024 740 L845 620 L795 652 L755 628 L620 720 L620 1024 L1024 1024 Z" fill="#CDB9F6"/>
+  <path d="M0 905 L150 830 L190 850 L512 400 L840 720 L880 700 L1024 790 L1024 1024 L0 1024 Z" fill="#14073B"/>
+  <path d="M512 400 L426 520 L486 485 L498 515 L545 468 L604 490 Z" fill="#08F2D8"/>
+  <g fill="none" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="44 30">
+    <path d="M520 1040 L280 950 L700 840 L410 740 L610 650 L512 545 L512 406" stroke="#08F2D8" clip-path="url(#rock)"/>
+    <path d="M520 1040 L280 950 L700 840 L410 740 L610 650 L512 545 L512 406" stroke="#14073B" clip-path="url(#snow)"/>
+  </g>
+  <circle cx="280" cy="950" r="22" fill="#FFFFFF"/><circle cx="700" cy="840" r="19" fill="#FFFFFF"/><circle cx="410" cy="740" r="16" fill="#FFFFFF"/><circle cx="610" cy="650" r="13" fill="#FFFFFF"/>
+  <path d="M512 406 L512 270" stroke="#14073B" stroke-width="14" stroke-linecap="round"/>
+  <path d="M519 270 C552 278 580 288 612 298 C580 308 552 318 519 328 Z" fill="#08F2D8"/>
+  <path d="M647 118 C700 225 820 350 975 402 C1000 390 1030 376 1058 377 C1074 378 1084 386 1088 393 L1106 401 C1082 403 1061 412 1047 429 C1040 440 1036 452 1035 461 C1100 540 1150 680 1135 812 C1115 690 1050 582 945 515 C870 545 800 585 737 628 L823 533 L678 546 C740 530 800 510 850 487 L875 463 C760 380 660 255 647 118 Z" fill="#14073B" transform="translate(792 86) scale(.2) translate(-647 -118)"/>
+</svg>

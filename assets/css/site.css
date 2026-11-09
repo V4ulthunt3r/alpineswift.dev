@@ -225,6 +225,35 @@ a { color: inherit; }
 .sym.app { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid var(--ink); }
 .sym.web { width: 11px; height: 11px; background: var(--logo-facet); }
 .sym.oss { width: 12px; height: 12px; border: 2px solid var(--ice); border-radius: 50%; }
+/* ---------- Approach: AI workflow + own tools ---------- */
+.belay { margin-bottom: clamp(36px, 5vw, 56px); }
+.belay ol { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); position: relative; }
+/* the rope: a dashed line through the three anchor points */
+.belay ol::before { content: ""; position: absolute; top: 17px; left: 18px; right: 18px; border-top: 2px dashed var(--contour-index); }
+.belay li { position: relative; display: grid; gap: 8px; align-content: start; }
+.belay-n { width: 36px; height: 36px; display: grid; place-items: center; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; font-family: var(--f-mono); font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.belay li:last-child .belay-n { background: var(--route); border-color: var(--route); color: var(--route-ink); }
+.belay b { font-family: var(--f-display); font-stretch: 110%; font-weight: 750; font-size: 1.2rem; line-height: 1.2; }
+.belay li p { color: var(--ink-2); }
+@media (max-width: 760px) {
+  .belay ol { grid-template-columns: 1fr; gap: 22px; }
+  .belay ol::before { top: 18px; bottom: 18px; left: 17px; right: auto; border-top: 0; border-left: 2px dashed var(--contour-index); }
+  .belay li { grid-template-columns: 36px 1fr; column-gap: 16px; row-gap: 4px; }
+  .belay-n { grid-row: span 2; margin: 0; }
+}
+.tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .tools { grid-template-columns: 1fr; } }
+.tool { background: var(--paper-2); padding: 24px; display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px; min-width: 0; }
+.tool-icon { display: block; width: 72px; height: 72px; margin-bottom: 8px; }
+.tool-icon img { display: block; width: 100%; height: 100%; border-radius: 22.37%; box-shadow: 0 0 0 1px var(--line), 0 6px 18px -8px rgba(17, 6, 56, .45); }
+.tool .meta { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.tool h3 { font-family: var(--f-display); font-stretch: 112%; font-weight: 780; font-size: 1.35rem; line-height: 1.1; }
+.tool p { color: var(--ink-2); font-size: .97rem; }
+.tool .gain { margin-top: 6px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--ink); }
+.tool .gain b { color: var(--route-text); font-weight: 600; }
+.tools-note { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 20px; color: var(--ink-2); }
+.tools-note b { color: var(--ink); font-weight: 600; }
+
 .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .project { position: relative; overflow: hidden; background: var(--paper-2); padding: 24px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; min-width: 0; transition: background .15s; }
 .project > * { position: relative; }
