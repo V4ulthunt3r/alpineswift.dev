@@ -277,7 +277,7 @@ a { color: inherit; }
 }
 .tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 @media (max-width: 900px) { .tools { grid-template-columns: 1fr; } }
-.tool { background: var(--paper-2); padding: 24px; display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px; min-width: 0; }
+.tool { background: var(--paper-2); padding: 24px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .tool-icon { display: block; width: 72px; height: 72px; margin-bottom: 8px; }
 .tool-icon .ic-dark { display: none; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tool-icon .ic-light { display: none; } :root:not([data-theme="light"]) .tool-icon .ic-dark { display: block; } }
@@ -287,10 +287,35 @@ a { color: inherit; }
 .tool .meta { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
 .tool h3 { font-family: var(--f-display); font-stretch: 112%; font-weight: 780; font-size: 1.35rem; line-height: 1.1; }
 .tool p { color: var(--ink-2); font-size: .97rem; }
-.tool .gain { margin-top: 6px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--ink); }
+.tool .gain { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); color: var(--ink); }
+/* honest status: what runs today vs. what is still being built */
+.status { align-self: start; justify-self: start; display: inline-flex; align-items: center; gap: 7px; font-family: var(--f-mono); font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--line); color: var(--ink-2); }
+.status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.status.live { color: var(--route-text); border-color: var(--logo-facet); }
+.status.dev { border-style: dashed; }
+.tool .planned { font-size: .92rem; }
+.tool .planned b { font-family: var(--f-mono); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
 .tool .gain b { color: var(--route-text); font-weight: 600; }
 .tools-note { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 20px; color: var(--ink-2); }
 .tools-note b { color: var(--ink); font-weight: 600; }
+
+/* ---------- Project cases: three projects in depth ---------- */
+.cases { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: clamp(44px, 6vw, 72px); }
+.case { background: var(--paper-2); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(22px, 4vw, 48px); padding: clamp(22px, 3vw, 36px); align-items: start; }
+@media (max-width: 860px) { .case { grid-template-columns: 1fr; } }
+.case-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.case-shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.case.wide .case-shots { grid-template-columns: 1fr; }
+.case-body { display: grid; gap: 12px; align-content: start; }
+.case-body .meta { display: flex; align-items: center; gap: 9px; font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.case-body h3 { font-family: var(--f-display); font-stretch: 112%; font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.05; }
+.case-facts { display: grid; gap: 12px; margin: 2px 0 0; }
+.case-facts dt { font-family: var(--f-mono); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--route-text); margin-bottom: 3px; }
+.case-facts dd { margin: 0; color: var(--ink-2); font-size: .99rem; }
+.case .links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
+.case .links a { font-family: var(--f-mono); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border-bottom: 2px solid var(--route); }
+.case .links a:hover { color: var(--route-text); }
+.more-head { font-family: var(--f-display); font-stretch: 112%; font-weight: 780; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase; }
 
 .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .project { position: relative; overflow: hidden; background: var(--paper-2); padding: 24px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; min-width: 0; transition: background .15s; }
