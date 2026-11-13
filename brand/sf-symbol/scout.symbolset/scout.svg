@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg
+PUBLIC "-//W3C//DTD SVG 1.1//EN"
+       "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3300" height="2200">
+ <!--glyph: "", point size: 100.0, template writer version: "101"-->
+ <style>.monochrome-0 {fill:#000000}
+.monochrome-1 {fill:#000000}
+
+.multicolor-0:tintColor {fill:#007AFF}
+.multicolor-1:systemMintColor {fill:#00C7BE}
+
+.hierarchical-0:primary {fill:#212121}
+.hierarchical-1:secondary {fill:#8C8C8C}
+
+.SFSymbolsPreviewWireframe {fill:none;opacity:1.0;stroke:black;stroke-width:0.5}
+</style>
+ <g id="Notes">
+  <rect height="2200" id="artboard" style="fill:white;opacity:1" width="3300" x="0" y="0"/>
+  <line style="fill:none;stroke:black;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="292" y2="292"/>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;font-weight:bold;" transform="matrix(1 0 0 1 263 322)">Weight/Scale Variations</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 559.711 322)">Ultralight</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 856.422 322)">Thin</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 1153.13 322)">Light</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 1449.84 322)">Regular</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 1746.56 322)">Medium</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 2043.27 322)">Semibold</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 2339.98 322)">Bold</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 2636.69 322)">Heavy</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:middle;" transform="matrix(1 0 0 1 2933.4 322)">Black</text>
+  <line style="fill:none;stroke:black;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1903" y2="1903"/>
+  <text id="template-version" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1933)">Template v.4.0</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1951)">Requires Xcode 14 or greater</text>
+  <text id="descriptive-name" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1969)">scout</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1987)">Typeset at 100 points</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;" transform="matrix(1 0 0 1 263 726)">Small</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;" transform="matrix(1 0 0 1 263 1156)">Medium</text>
+  <text style="stroke:none;fill:black;font-family:sans-serif;font-size:13;" transform="matrix(1 0 0 1 263 1586)">Large</text>
+ </g>
+ <g id="Guides">
+  <line id="Baseline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="696" y2="696"/>
+  <line id="Capline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="625.541" y2="625.541"/>
+  <line id="Baseline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1126" y2="1126"/>
+  <line id="Capline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1055.541" y2="1055.541"/>
+  <line id="Baseline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1556" y2="1556"/>
+  <line id="Capline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1485.541" y2="1485.541"/>
+  <line id="left-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;opacity:1;stroke-width:0.5;" x1="514.691" x2="514.691" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;opacity:1;stroke-width:0.5;" x1="604.731" x2="604.731" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Regular-S" style="fill:none;stroke:#00AEEF;opacity:1;stroke-width:0.5;" x1="1404.82" x2="1404.82" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Regular-S" style="fill:none;stroke:#00AEEF;opacity:1;stroke-width:0.5;" x1="1494.86" x2="1494.86" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Black-S" style="fill:none;stroke:#00AEEF;opacity:1;stroke-width:0.5;" x1="2888.38" x2="2888.38" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Black-S" style="fill:none;stroke:#00AEEF;opacity:1;stroke-width:0.5;" x1="2978.42" x2="2978.42" y1="600.785" y2="720.121"/>
+ </g>
+ <g id="Symbols">
+  <g id="Black-S" transform="matrix(1 0 0 1 2888.38 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M3 -79.161C21.577 -80.046 41.039 -72.615 50.77 -57.576C53.423 -59.168 56.962 -59.522 59.262 -58.107L62.624 -55.807L58.377 -55.099C62.624 -46.076 64.039 -31.922 60.677 -20.953C58.377 -31.922 53.423 -40.414 44.223 -45.722L12.023 -34.045L32.546 -45.722L9.723 -42.538L35.377 -50.322C39.269 -52.445 39.269 -54.922 37.146 -57.045C28.654 -69.076 14.5 -76.507 3 -79.161Z"/>
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M7.423 8.77L32.832 -12.46L42.808 -14.23L44.931 -11.045L49.177 -15.291L61.63 -12.46L87.039 8.77Z"/>
+   <path class="monochrome-1 multicolor-1:systemMintColor hierarchical-1:secondary SFSymbolsPreviewWireframe" d="M47.231 -24.491L35.373 -14.584L42.808 -16.353L44.931 -13.168L49.177 -17.414L59.089 -14.584Z"/>
+  </g>
+  <g id="Regular-S" transform="matrix(1 0 0 1 1404.82 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M3 -79.161C21.577 -80.046 41.039 -72.615 50.77 -57.576C53.423 -59.168 56.962 -59.522 59.262 -58.107L62.624 -55.807L58.377 -55.099C62.624 -46.076 64.039 -31.922 60.677 -20.953C58.377 -31.922 53.423 -40.414 44.223 -45.722L12.023 -34.045L32.546 -45.722L9.723 -42.538L35.377 -50.322C39.269 -52.445 39.269 -54.922 37.146 -57.045C28.654 -69.076 14.5 -76.507 3 -79.161Z"/>
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M7.423 8.77L32.832 -12.46L42.808 -14.23L44.931 -11.045L49.177 -15.291L61.63 -12.46L87.039 8.77Z"/>
+   <path class="monochrome-1 multicolor-1:systemMintColor hierarchical-1:secondary SFSymbolsPreviewWireframe" d="M47.231 -24.491L35.373 -14.584L42.808 -16.353L44.931 -13.168L49.177 -17.414L59.089 -14.584Z"/>
+  </g>
+  <g id="Ultralight-S" transform="matrix(1 0 0 1 514.691 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M3 -79.161C21.577 -80.046 41.039 -72.615 50.77 -57.576C53.423 -59.168 56.962 -59.522 59.262 -58.107L62.624 -55.807L58.377 -55.099C62.624 -46.076 64.039 -31.922 60.677 -20.953C58.377 -31.922 53.423 -40.414 44.223 -45.722L12.023 -34.045L32.546 -45.722L9.723 -42.538L35.377 -50.322C39.269 -52.445 39.269 -54.922 37.146 -57.045C28.654 -69.076 14.5 -76.507 3 -79.161Z"/>
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M7.423 8.77L32.832 -12.46L42.808 -14.23L44.931 -11.045L49.177 -15.291L61.63 -12.46L87.039 8.77Z"/>
+   <path class="monochrome-1 multicolor-1:systemMintColor hierarchical-1:secondary SFSymbolsPreviewWireframe" d="M47.231 -24.491L35.373 -14.584L42.808 -16.353L44.931 -13.168L49.177 -17.414L59.089 -14.584Z"/>
+  </g>
+ </g>
+</svg>
