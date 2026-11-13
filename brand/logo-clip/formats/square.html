@@ -1,0 +1,72 @@
+<!doctype html>
+<html
+  lang="de"
+  data-composition-variables='[{"id":"ground","type":"color","label":"Hintergrund (Navy)","default":"#110638"},{"id":"accent","type":"color","label":"Akzent (Cyan)","default":"#14F0DC"},{"id":"ink","type":"color","label":"Logo / Schrift","default":"#FFFFFF"},{"id":"transparent","type":"boolean","label":"Transparenter Hintergrund","default":false}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #110638;
+        --accent: #14f0dc;
+        --ink: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      /* transparent variant: logo only, no ground, glow or contour lines */
+      html.is-transparent,
+      html.is-transparent body {
+        background: transparent;
+      }
+      html.is-transparent #lg-ground,
+      html.is-transparent #lg-topo {
+        display: none;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="6"
+      data-width="1080"
+      data-height="1080"
+    >
+      <div
+        id="logo"
+        data-composition-id="logo"
+        data-composition-src="compositions/logo.html"
+        data-variable-values='{"layout":"square"}'
+        data-start="0"
+        data-duration="6"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1080"
+      ></div>
+    </div>
+    <script>
+      if (window.__hyperframes.getVariables().transparent) document.documentElement.classList.add("is-transparent");
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
