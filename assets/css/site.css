@@ -452,6 +452,14 @@ a.rt:hover { border-color: var(--ink-2); transform: translateY(-2px); }
 .tool .more a { text-decoration: none; border-bottom: 2px solid var(--route); }
 .tool .more a:hover, .tool h3 a:hover { color: var(--route-text); }
 .tool h3 a { text-decoration: none; }
+/* Whole tile is clickable: the title link stretches over the card */
+.tool:has(h3 a) { position: relative; transition: background-color .2s ease; }
+.tool h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.tool .more a { position: relative; z-index: 2; }
+.tool:has(h3 a):hover { background: var(--paper); }
+.tool:has(h3 a):hover h3 a, .tool:has(h3 a):hover .more a { color: var(--route-text); }
+.tool:has(h3 a:focus-visible) { outline: 2px solid var(--route); outline-offset: -2px; }
+.tool h3 a:focus-visible { outline: none; }
 
 /* ---------- Legal pages ---------- */
 .legal { padding-block: calc(var(--header-h) + 56px) 96px; }
