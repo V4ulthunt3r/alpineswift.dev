@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trail · Projektmanagement für Indie-Entwickler · Alpine Swift</title>
+<meta name="description" content="Trail ist natives, lokales Projektmanagement für iPhone, iPad und Mac: Aufgaben, Meilensteine, Notizen und Dateien an einem Ort, synchronisiert über deine eigene iCloud. Ein Werkzeug von Alpine Swift.">
+<link rel="canonical" href="https://alpineswift.dev/trail/">
+<link rel="alternate" hreflang="de" href="https://alpineswift.dev/trail/">
+<link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/trail/">
+<link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/trail/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alpineswift.dev/trail/">
+<meta property="og:title" content="Trail · Alpine Swift">
+<meta property="og:description" content="Trail ist natives, lokales Projektmanagement für iPhone, iPad und Mac: Aufgaben, Meilensteine, Notizen und Dateien an einem Ort, synchronisiert über deine eigene iCloud. Ein Werkzeug von Alpine Swift.">
+<meta property="og:locale" content="de_DE">
+<meta name="theme-color" content="#F4F1FC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0420" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/onest-var.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Alpine Swift, zur Startseite">
+      <svg viewBox="70 100 1085 1010" aria-hidden="true">
+        <path class="mk-mtn" d="M88 1095 L617 621 L1068 1050 L665 740 L567 925 L509 862 Z"/>
+        <path class="mk-facet" d="M665 740 L1068 1050 L722 900 Z"/>
+        <g class="mk-bird"><path d="M647 118 C700 225 820 350 975 402 C1000 390 1030 376 1058 377 C1074 378 1084 386 1088 393 L1106 401 C1082 403 1061 412 1047 429 C1040 440 1036 452 1035 461 C1100 540 1150 680 1135 812 C1115 690 1050 582 945 515 C870 545 800 585 737 628 L823 533 L678 546 C740 530 800 510 850 487 L875 463 C760 380 660 255 647 118 Z"/><path class="mk-wing" d="M1135 812 C1115 690 1050 582 945 515 L988 503 C1062 562 1116 664 1135 812 Z"/></g>
+      </svg>
+      <span>Alpine <em>Swift</em></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.8"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="/">Studio</a>
+      <a href="/trail/" aria-current="page">Trail</a>
+      <a href="/scout/">Scout</a>
+      <a href="/beacon/">Beacon</a>
+      <a class="lang" href="/en/trail/" hreflang="en" lang="en">EN</a>
+      <a class="btn primary" href="#interesse">Interesse melden</a>
+    </nav>
+    <button class="theme-btn" type="button" data-theme-toggle data-mode="auto" aria-label="Farbschema: Automatisch (System). Wechseln"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><g class="ti-auto"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 0 0 14z" fill="currentColor" stroke="none"/></g><g class="ti-light"><circle cx="10" cy="10" r="3.6"/><path d="M10 1.5v2.2M10 16.3v2.2M1.5 10h2.2M16.3 10h2.2M4 4l1.6 1.6M14.4 14.4 16 16M4 16l1.6-1.6M14.4 5.6 16 4"/></g><g class="ti-dark"><path d="M16.5 12.4A7 7 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9z"/></g></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="p-hero" aria-labelledby="p-title">
+    <div class="wrap">
+      <div class="p-hero-text">
+        <p class="label"><b>Alpine Swift</b> · Werkzeug 01 · Planen</p>
+        <h1 id="p-title">Trail</h1>
+        <p class="tagline">Die Route für deine <em>App-Projekte.</em></p>
+        <p class="lede">Trail ist Projektmanagement für Indie-Entwickler: Aufgaben, Meilensteine, Notizen und Dateien an einem Ort, nativ auf iPhone, iPad und Mac. Deine Daten liegen auf deinen Geräten und gleichen sich über deine eigene iCloud ab.</p>
+        <div class="p-badges"><p class="status live">Intern im Einsatz</p><div class="chips"><span>iPhone</span><span>iPad</span><span>Mac</span></div></div>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#interesse">Interesse melden</a>
+          <a class="btn" href="#funktionen">Funktionen</a>
+        </div>
+      </div>
+      <div class="p-map" aria-hidden="true">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+          <g transform="rotate(0 200 200)">
+            <rect class="ring" x="-60" y="-50" width="530" height="505" rx="215"/>
+            <rect class="ring idx" x="-12" y="-4" width="430" height="412" rx="180"/>
+            <rect class="ring" x="30" y="34" width="346" height="334" rx="146"/>
+            <rect class="ring" x="62" y="64" width="282" height="272" rx="120"/>
+            <rect class="ring idx" x="88" y="90" width="228" height="222" rx="98"/>
+            <rect class="ring" x="104" y="104" width="196" height="194" rx="84"/>
+          </g>
+          <path class="trailpath" d="M-10 410 C 40 360, 30 320, 90 300 S 150 250, 128 214"/>
+        </svg>
+        <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/trail-light.svg" width="256" height="256" alt="" decoding="async"><img class="ic-dark" src="/assets/img/tools/trail-dark.svg" width="256" height="256" alt="" decoding="async"></span>
+        <span class="corner tl">Werkzeug 01 / 03</span>
+        <span class="corner br">Etappe · alle</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Warum Trail <span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span></p>
+        <h2 id="why-title">Gebaut für Projekte mit einer Person an Bord.</h2>
+        <p>Große Projekt-Tools sind für Teams mit Rollen, Sprints und Lizenzen gedacht. Wer allein oder zu zweit Apps baut, braucht etwas anderes: schnell erfasst, offline verfügbar und nah am Code.</p>
+      </div>
+      <div class="audience">
+        <article>
+          <h3>Schnell erfasst</h3>
+          <p>Eingang, Heute und Meine Aufgaben: Ideen landen sofort im richtigen Projekt und tauchen wieder auf, wenn sie dran sind.</p>
+        </article>
+        <article>
+          <h3>Nah am Code</h3>
+          <p>Issues, Branches, Pull Requests und Commits aus GitHub hängen direkt an der Aufgabe, zu der sie gehören.</p>
+        </article>
+        <article>
+          <h3>Ohne fremden Server</h3>
+          <p>Synchronisiert wird über deine private iCloud. Es gibt kein Konto bei Alpine Swift und keine Projektdaten auf unseren Rechnern.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="funktionen" aria-labelledby="feat-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Funktionen</p>
+        <h2 id="feat-title">Was Trail kann.</h2>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <h3>Liste oder Board</h3>
+          <p>Jedes Projekt als Liste oder Kanban-Board mit frei konfigurierbaren Statusspalten. Aufgaben per Drag-and-drop verschieben und sortieren.</p>
+        </article>
+        <article class="feature">
+          <h3>Meilensteine und Abhängigkeiten</h3>
+          <p>Unteraufgaben, Checklisten, Tags, Meilensteine und Abhängigkeiten, die keine Kreise zulassen. Dazu geschätzter und tatsächlicher Aufwand.</p>
+        </article>
+        <article class="feature">
+          <h3>Zeitleiste und Kennzahlen</h3>
+          <p>Planungskennzahlen und eine Zeitleiste zeigen, ob das Projekt auf Kurs ist, bevor der Zieltermin drückt.</p>
+        </article>
+        <article class="feature">
+          <h3>Notizen mit Versionen</h3>
+          <p>Konzepte und Entscheidungen als versionierte Notizen direkt im Projekt. Frühere Stände bleiben nachvollziehbar.</p>
+        </article>
+        <article class="feature">
+          <h3>Dateien am richtigen Ort</h3>
+          <p>Entwürfe, Screenshots und Dokumente gehören zum Projekt, zur Aufgabe oder zur Notiz. Mit Typfilter und Quick Look, Originale werden mit Prüfsumme gesichert.</p>
+        </article>
+        <article class="feature">
+          <h3>Eine Suche für alles</h3>
+          <p>Projekte und Aufgaben in einer Suche, filterbar nach Favoriten, Status, Priorität und Fälligkeit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section principles" aria-labelledby="pr-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Für alle drei Werkzeuge</p>
+        <h2 id="pr-title">Gebaut wie unsere Apps.</h2>
+        <p>Auf dem Mac bringt Trail den lokalen Adapter <code>trail-mcp</code> mit. Gibst du ein Projekt frei, kann ein KI-Assistent es lesen, Titel und Termine prüfen und Verbesserungen vorschlagen. Übernommen wird erst, wenn du im Review zustimmst. Die Freigabe endet, sobald du sie widerrufst oder Trail beendest.</p>
+      </div>
+      <ul class="principle-list" role="list">
+          <li><b>Lokal zuerst</b><p>Deine Daten liegen auf deinen Geräten. Kein Konto bei Alpine Swift und kein eigener Server dazwischen.</p></li>
+          <li><b>Nativ für Apple</b><p>Gebaut mit Swift und SwiftUI, mit Hell- und Dunkelmodus und den Bedienmustern, die du von Apple kennst.</p></li>
+          <li><b>Assistenten willkommen</b><p>Jedes Werkzeug bringt eine lokale MCP-Schnittstelle mit. KI-Assistenten dürfen lesen, prüfen und vorschlagen.</p></li>
+          <li><b>Du entscheidest</b><p>Übernommen, veröffentlicht oder eingereicht wird nur, was du selbst bestätigt hast. Kein stiller Automatismus.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="spec-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Steckbrief</p>
+        <h2 id="spec-title">Trail auf einen Blick.</h2>
+      </div>
+      <dl class="spec">
+        <div><dt>Plattformen</dt><dd>iPhone und iPad ab iOS 18, Mac ab macOS 15</dd></div>
+        <div><dt>Daten und Sync</dt><dd>Lokal gespeichert, Abgleich über deine private iCloud (CloudKit)<small>Änderungen bleiben auch offline erhalten und werden beim nächsten Abgleich zusammengeführt.</small></dd></div>
+        <div><dt>Anbindungen</dt><dd>GitHub: Issues, Branches, Pull Requests und Commits<small>Lokale KI-Assistenten über MCP (Mac)</small></dd></div>
+        <div><dt>Stand</dt><dd>Bei jedem Alpine-Swift-Projekt im Einsatz<small>Eine Veröffentlichung im App Store ist geplant, aber noch nicht terminiert.</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="team-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Die Seilschaft</p>
+        <h2 id="team-title">Drei Werkzeuge, eine Route.</h2>
+        <p>Trail plant, Scout prüft, Beacon bringt die App in den Store. Jedes Werkzeug funktioniert für sich, zusammen decken sie den Weg vom ersten Ticket bis zum fertigen Store-Eintrag ab.</p>
+      </div>
+      <div class="ropeteam">
+        <div class="rt here" aria-current="page">
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/trail-light.svg" width="64" height="64" alt="App-Icon von Trail" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/trail-dark.svg" width="64" height="64" alt="" loading="lazy" decoding="async"></span>
+          <span class="meta">Planen · alle Etappen <em>Du bist hier</em></span>
+          <b>Trail</b>
+          <p>Projekte, Aufgaben und Entscheidungen festhalten.</p>
+        </div>
+        <a class="rt" href="/scout/">
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/scout-light.jpg" width="64" height="64" alt="App-Icon von Scout" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/scout-dark.jpg" width="64" height="64" alt="" loading="lazy" decoding="async"></span>
+          <span class="meta">Prüfen · Etappe 2</span>
+          <b>Scout</b>
+          <p>Code vor dem Release auf Qualität prüfen.</p>
+        </a>
+        <a class="rt" href="/beacon/">
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/beacon-light.jpg" width="64" height="64" alt="App-Icon von Beacon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/beacon-dark.jpg" width="64" height="64" alt="" loading="lazy" decoding="async"></span>
+          <span class="meta">Veröffentlichen · Launch &amp; Betrieb</span>
+          <b>Beacon</b>
+          <p>Store-Eintrag pflegen, Releases einreichen.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section summit p-cta" id="interesse" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="summit-text">
+        <p class="label"><b>Trail</b> · Interesse <span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span></p>
+        <h2 id="cta-title">Sag Bescheid, wenn du Trail testen willst.</h2>
+        <p>Trail ist noch nicht öffentlich. Schreib mir kurz, woran du arbeitest. Sobald eine Testphase startet, melde ich mich. Kein Newsletter, nur eine Mail, wenn es so weit ist.</p>
+        <div class="mail">
+          <a class="addr" href="mailto:info@hildel.com?subject=Interesse%20an%20Trail">info@hildel.com</a>
+          <button class="btn" type="button" data-copy="info@hildel.com" data-done="Kopiert"><span>Adresse kopieren</span></button>
+        </div>
+        <p class="back">Du brauchst eine App statt eines Werkzeugs? <a href="/#kontakt">Zum App-Studio</a></p>
+      </div>
+      <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/trail-light.svg" width="256" height="256" alt="" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/trail-dark.svg" width="256" height="256" alt="" loading="lazy" decoding="async"></span>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Alpine Swift · Peter Hildel</span>
+    <nav aria-label="Rechtliches">
+      <a href="/">Alpine Swift</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/en/trail/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scout · Quality checks for Swift projects · Alpine Swift</title>
+<meta name="description" content="Scout checks Swift and SwiftUI projects before release: SwiftLint, build, tests and coverage in one run, locally on the Mac, with history and reports. A tool by Alpine Swift.">
+<link rel="canonical" href="https://alpineswift.dev/en/scout/">
+<link rel="alternate" hreflang="de" href="https://alpineswift.dev/scout/">
+<link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/scout/">
+<link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/scout/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alpineswift.dev/en/scout/">
+<meta property="og:title" content="Scout · Alpine Swift">
+<meta property="og:description" content="Scout checks Swift and SwiftUI projects before release: SwiftLint, build, tests and coverage in one run, locally on the Mac, with history and reports. A tool by Alpine Swift.">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#F4F1FC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0420" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/onest-var.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="Alpine Swift, to the home page">
+      <svg viewBox="70 100 1085 1010" aria-hidden="true">
+        <path class="mk-mtn" d="M88 1095 L617 621 L1068 1050 L665 740 L567 925 L509 862 Z"/>
+        <path class="mk-facet" d="M665 740 L1068 1050 L722 900 Z"/>
+        <g class="mk-bird"><path d="M647 118 C700 225 820 350 975 402 C1000 390 1030 376 1058 377 C1074 378 1084 386 1088 393 L1106 401 C1082 403 1061 412 1047 429 C1040 440 1036 452 1035 461 C1100 540 1150 680 1135 812 C1115 690 1050 582 945 515 C870 545 800 585 737 628 L823 533 L678 546 C740 530 800 510 850 487 L875 463 C760 380 660 255 647 118 Z"/><path class="mk-wing" d="M1135 812 C1115 690 1050 582 945 515 L988 503 C1062 562 1116 664 1135 812 Z"/></g>
+      </svg>
+      <span>Alpine <em>Swift</em></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.8"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="/en/">Studio</a>
+      <a href="/en/trail/">Trail</a>
+      <a href="/en/scout/" aria-current="page">Scout</a>
+      <a href="/en/beacon/">Beacon</a>
+      <a class="lang" href="/scout/" hreflang="de" lang="de">DE</a>
+      <a class="btn primary" href="#interest">Register interest</a>
+    </nav>
+    <button class="theme-btn" type="button" data-theme-toggle data-mode="auto" aria-label="Colour scheme: Automatic (system). Change"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><g class="ti-auto"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 0 0 14z" fill="currentColor" stroke="none"/></g><g class="ti-light"><circle cx="10" cy="10" r="3.6"/><path d="M10 1.5v2.2M10 16.3v2.2M1.5 10h2.2M16.3 10h2.2M4 4l1.6 1.6M14.4 14.4 16 16M4 16l1.6-1.6M14.4 5.6 16 4"/></g><g class="ti-dark"><path d="M16.5 12.4A7 7 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9z"/></g></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="p-hero" aria-labelledby="p-title">
+    <div class="wrap">
+      <div class="p-hero-text">
+        <p class="label"><b>Alpine Swift</b> · Tool 02 · Check</p>
+        <h1 id="p-title">Scout</h1>
+        <p class="tagline">The quality check <em>before every release.</em></p>
+        <p class="lede">Scout checks your Swift and SwiftUI projects before they go to the store: lint rules, build, tests and coverage in one run, locally on your Mac. You end up with a report that shows what got better and what is still missing.</p>
+        <div class="p-badges"><p class="status live">In use in-house</p><div class="chips"><span>Mac</span><span>Xcode</span><span>SwiftLint</span></div></div>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#interest">Register interest</a>
+          <a class="btn" href="#features">Features</a>
+        </div>
+      </div>
+      <div class="p-map" aria-hidden="true">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+          <g transform="rotate(120 200 200)">
+            <rect class="ring" x="-60" y="-50" width="530" height="505" rx="215"/>
+            <rect class="ring idx" x="-12" y="-4" width="430" height="412" rx="180"/>
+            <rect class="ring" x="30" y="34" width="346" height="334" rx="146"/>
+            <rect class="ring" x="62" y="64" width="282" height="272" rx="120"/>
+            <rect class="ring idx" x="88" y="90" width="228" height="222" rx="98"/>
+            <rect class="ring" x="104" y="104" width="196" height="194" rx="84"/>
+          </g>
+          <path class="trailpath" d="M410 410 C 360 380, 370 330, 310 320 S 260 290, 272 250"/>
+        </svg>
+        <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/scout-light.jpg" width="256" height="256" alt="" decoding="async"><img class="ic-dark" src="/assets/img/tools/scout-dark.jpg" width="256" height="256" alt="" decoding="async"></span>
+        <span class="corner tl">Tool 02 / 03</span>
+        <span class="corner br">Stage 2 · Native app</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Why Scout <span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span></p>
+        <h2 id="why-title">When AI writes along, someone has to proofread.</h2>
+        <p>AI tools produce a lot of code, fast. Whether it is clean, tested and maintainable often only shows after launch. Scout makes it visible beforehand, without your code ever leaving your machine.</p>
+      </div>
+      <div class="audience">
+        <article>
+          <h3>One run, every check</h3>
+          <p>SwiftLint, build, tests and measured coverage from your Xcode schemes. No piecing results together from four terminal windows.</p>
+        </article>
+        <article>
+          <h3>Progress, not a snapshot</h3>
+          <p>Every run is saved. Scout compares against a baseline you choose and shows which findings are new and which are resolved.</p>
+        </article>
+        <article>
+          <h3>Local and provable</h3>
+          <p>Checksums before and after every run prove which source state was checked. The code stays on your Mac.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" aria-labelledby="feat-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Features</p>
+        <h2 id="feat-title">What Scout does.</h2>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <h3>Profiles from Xcode</h3>
+          <p>Scout reads schemes, configurations and test destinations from the project and saves them as a reusable check profile.</p>
+        </article>
+        <article class="feature">
+          <h3>Your own rules</h3>
+          <p>Turn default rules on and off, add custom regex rules with message and severity, exclude paths. Without touching project files.</p>
+        </article>
+        <article class="feature">
+          <h3>Best-practice catalogue</h3>
+          <p>Recommendations for Swift and SwiftUI with sources and clearly stated limits. Selected rules run as an extra check per project.</p>
+        </article>
+        <article class="feature">
+          <h3>Findings that move with the code</h3>
+          <p>When code shifts, Scout re-matches unchanged finding lines through stored hashes. The comparison stays meaningful.</p>
+        </article>
+        <article class="feature">
+          <h3>Reports for people and agents</h3>
+          <p>Export as HTML for reading and JSON for tools, plus a Markdown guide on how to read the report.</p>
+        </article>
+        <article class="feature">
+          <h3>AI repair brief</h3>
+          <p>A check run becomes a ready-made prompt: copy it or save it as a Markdown file and hand it to your coding assistant.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section principles" aria-labelledby="pr-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Shared by all three tools</p>
+        <h2 id="pr-title">Built like our apps.</h2>
+        <p>Through the embedded adapter <code>scout-mcp</code>, a local assistant sees the profiles and metrics of a shared project and can propose rule changes. Scout never hands out source code or account data, and a rule only changes once you accept the proposal in Scout.</p>
+      </div>
+      <ul class="principle-list" role="list">
+          <li><b>Local first</b><p>Your data lives on your devices. No Alpine Swift account and no server of ours in between.</p></li>
+          <li><b>Native to Apple</b><p>Built with Swift and SwiftUI, with light and dark mode and the interaction patterns you know from Apple.</p></li>
+          <li><b>Assistants welcome</b><p>Every tool ships a local MCP interface. AI assistants may read, check and suggest.</p></li>
+          <li><b>You decide</b><p>Nothing is applied, published or submitted unless you confirmed it yourself. No silent automation.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="spec-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Fact sheet</p>
+        <h2 id="spec-title">Scout at a glance.</h2>
+      </div>
+      <dl class="spec">
+        <div><dt>Platform</dt><dd>Mac on macOS 26 or later</dd></div>
+        <div><dt>Checks</dt><dd>Swift and SwiftUI projects built with Xcode<small>SwiftLint, build, tests and coverage via xcodebuild</small></dd></div>
+        <div><dt>Integrations</dt><dd>Local AI assistants via MCP<small>GitHub link for branch and commit evidence in preparation</small></dd></div>
+        <div><dt>Status</dt><dd>In use on every Alpine Swift project, version 1 nearing completion<small>A release is planned, but not yet scheduled.</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="team-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">The rope team</p>
+        <h2 id="team-title">Three tools, one route.</h2>
+        <p>Trail plans, Scout checks, Beacon takes the app to the store. Each tool works on its own; together they cover the way from the first ticket to a finished store listing.</p>
+      </div>
+      <div class="ropeteam">
+        <a class="rt" href="/en/trail/">
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/trail-light.svg" width="64" height="64" alt="Trail app icon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/trail-dark.svg" width="64" height="64" alt="" loading="lazy" decoding="async"></span>
+          <span class="meta">Plan · every stage</span>
+          <b>Trail</b>
+          <p>Keep projects, tasks and decisions on record.</p>
+        </a>
+        <div class="rt here" aria-current="page">
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/scout-light.jpg" width="64" height="64" alt="Scout app icon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/scout-dark.jpg" width="64" height="64" alt="" loading="lazy" decoding="async"></span>
+          <span class="meta">Check · stage 2 <em>You are here</em></span>
+          <b>Scout</b>
+          <p>Check code quality before every release.</p>
+        </div>
+        <a class="rt" href="/en/beacon/">
+          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/beacon-light.jpg" width="64" height="64" alt="Beacon app icon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/beacon-dark.jpg" width="64" height="64" alt="" loading="lazy" decoding="async"></span>
+          <span class="meta">Publish · launch &amp; care</span>
+          <b>Beacon</b>
+          <p>Maintain your listing, submit releases.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section summit p-cta" id="interest" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="summit-text">
+        <p class="label"><b>Scout</b> · Interest <span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span></p>
+        <h2 id="cta-title">Let me know if you want to try Scout.</h2>
+        <p>Scout is not public yet. Drop me a line about the Swift project you are working on. As soon as a test phase starts, I will get in touch. No newsletter, just one email when it is time.</p>
+        <div class="mail">
+          <a class="addr" href="mailto:info@hildel.com?subject=Interested%20in%20Scout">info@hildel.com</a>
+          <button class="btn" type="button" data-copy="info@hildel.com" data-done="Copied"><span>Copy address</span></button>
+        </div>
+        <p class="back">Need an app rather than a tool? <a href="/en/#contact">Visit the app studio</a></p>
+      </div>
+      <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/scout-light.jpg" width="256" height="256" alt="" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/scout-dark.jpg" width="256" height="256" alt="" loading="lazy" decoding="async"></span>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Alpine Swift · Peter Hildel</span>
+    <nav aria-label="Legal">
+      <a href="/en/">Alpine Swift</a>
+      <a href="/impressum.html">Imprint</a>
+      <a href="/datenschutz.html">Privacy</a>
+      <a href="/scout/" hreflang="de" lang="de">Deutsch</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
