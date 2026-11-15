@@ -20,9 +20,9 @@
 <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/onest-var.woff2" as="font" type="font/woff2" crossorigin>
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/site.css?v=543768231a">
 </head>
-<body>
+<body class="home">
 
 <header class="site-header">
   <div class="wrap">
@@ -38,11 +38,10 @@
       <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.8"/></svg>
     </button>
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
-      <a href="#route">Leistungen</a>
-      <a href="#langstrecke">Betreuung</a>
-      <a href="#arbeitsweise">Arbeitsweise</a>
       <a href="#projekte">Projekte</a>
+      <a href="#route">Leistungen</a>
       <a href="#studio">Studio</a>
+      <a href="#fragen">Zusammenarbeit</a>
       <a class="lang" href="/en/" hreflang="en" lang="en">EN</a>
       <a class="btn primary" href="#kontakt">Projekt anfragen</a>
     </nav>
@@ -60,89 +59,158 @@
         <div class="hero-card">
           <p class="label">App-Studio für iPhone, iPad &amp; Mac</p>
           <h1 id="hero-title">Native Apps,<br><em>alpin</em> präzise.</h1>
-          <p>Alpine Swift plant, baut und veröffentlicht native Apps für iPhone, iPad und Mac. Und hält sie danach in der Luft. Flutter und Web, wenn ein Projekt mehr braucht.</p>
+          <p>Von der ersten Idee bis in den App Store. Ich entwickle Apps für iPhone, iPad und Mac und kümmere mich auch nach dem Launch darum.</p>
           <div class="hero-ctas">
             <a class="btn primary" href="#kontakt">Projekt anfragen</a>
             <a class="btn" href="#projekte">Projekte ansehen</a>
           </div>
+          <p class="hero-person">Mit Peter Hildel · Direkter Kontakt, von Anfang an.</p>
         </div>
       </div>
       <p class="hero-hint" aria-hidden="true">Scrollen: aus dem Berg wird eine App</p>
     </div>
   </section>
 
-  <section class="section" id="fuer-wen" data-alt="800" aria-labelledby="fw-title">
+  <section class="section selected-work" id="projekte" data-alt="800" aria-labelledby="pr-title">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><b>800 m</b> · Für wen</p>
-        <h2 id="fw-title">Für alle, die eine App ernst meinen.</h2>
+        <p class="label"><b>800 m</b> · Ausgewählte Projekte</p>
+        <h2 id="pr-title">Eigene Apps. Im Store.</h2>
+        <p>Drei Einblicke in meine Arbeit: vom Alltagshelfer bis zum Spiel. Selbst entwickelt, veröffentlicht und weitergepflegt.</p>
       </div>
-      <div class="audience">
-        <article>
-          <h3>Gründer &amp; Startups</h3>
-          <p>Du hast eine Idee und brauchst jemanden, der sie bis in den App Store bringt. Mit klickbarem Prototyp, sauberem Code und einer ehrlichen Einschätzung, was Version 1 wirklich können muss.</p>
+      <div class="featured-projects">
+        <article class="featured-card">
+          <div class="case-shots">
+            <img src="/assets/img/projects/games-bucket-list-1.jpg" width="598" height="1300" alt="Games Bucket List im App Store: Bibliothek mit gespeicherten Spielen" loading="lazy" decoding="async">
+            <img src="/assets/img/projects/games-bucket-list-2.jpg" width="598" height="1300" alt="Games Bucket List: Spiele nach Status gefiltert, darunter &#8222;Geplant&#8220; und &#8222;Wird gespielt&#8220;" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-body">
+            <p class="meta"><i class="sym app"></i>iPhone &#183; iPad</p>
+            <h3>Games Bucket List</h3>
+            <p>Spiele aus jeder App speichern, den Überblick behalten und die eigene Sammlung über iCloud synchronisieren.</p>
+            <div class="chips"><span>SwiftUI</span><span>iCloud</span><span>App Intents</span><span>Offline</span></div>
+            <p class="links"><a href="https://apps.apple.com/de/app/games-bucket-list/id6799535208">Im App Store</a></p>
+            <details class="case-detail">
+              <summary>Technik &amp; Hintergrund</summary>
+              <dl class="case-facts">
+              <div><dt>Problem</dt><dd>Spieletipps kommen von &#252;berall: aus dem Chat, aus einem Video, aus einem Sale im Store. Bis abends Zeit ist, ist der Titel wieder vergessen.</dd></div>
+              <div><dt>L&#246;sung</dt><dd>Ein Ort f&#252;r alles, was noch gespielt werden soll. Aus jeder App heraus speichern, Status und Fortschritt verfolgen, Gespieltes bewerten.</dd></div>
+              <div><dt>Technik</dt><dd>SwiftUI, dazu eine Teilen-Erweiterung und Siri-Kurzbefehle, damit ein Spiel aus jeder anderen App in die Liste wandert. Die Daten liegen offline auf dem Ger&#228;t und gleichen sich &#252;ber die eigene iCloud ab, ohne Server dazwischen.</dd></div>
+              <div><dt>Stand</dt><dd>Seit September 2026 im App Store, seitdem drei Updates. Ver&#246;ffentlichung, Store-Texte und Screenshots: Alpine Swift.</dd></div>
+            </dl>
+            </details>
+          </div>
         </article>
-        <article>
-          <h3>Mittelstand</h3>
-          <p>Eine App für deine Kunden, den Außendienst oder interne Abläufe. Nativ gebaut, gut wartbar und mit einem festen Ansprechpartner, der dein Projekt auch in zwei Jahren noch kennt.</p>
+        <article class="featured-card wide">
+          <div class="case-shots">
+            <img src="/assets/img/projects/lidshift-1.jpg" width="1280" height="800" alt="LidShift auf dem Mac: Men&#252;leisten-Fenster mit aktuellem Scharnierwinkel von 130 Grad" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-body">
+            <p class="meta"><i class="sym app"></i>macOS &#183; Men&#252;leiste</p>
+            <h3>LidShift</h3>
+            <p>Ein MacBook zuklappen, einen Effekt auslösen: eine native Menüleisten-App mit Animationen in Metal.</p>
+            <div class="chips"><span>SwiftUI</span><span>Metal</span><span>macOS 15</span><span>Bezahl-App</span></div>
+            <p class="links"><a href="https://apps.apple.com/de/app/lidshift/id6811376384">Im Mac App Store</a></p>
+            <details class="case-detail">
+              <summary>Technik &amp; Hintergrund</summary>
+              <dl class="case-facts">
+              <div><dt>Idee</dt><dd>Das Zuklappen des MacBooks ist der unscheinbarste Moment des Tages. LidShift macht einen kleinen Auftritt daraus.</dd></div>
+              <div><dt>L&#246;sung</dt><dd>Die App liest den echten Scharnierwinkel des MacBooks aus und legt den Effekt &#252;ber den Bildschirm: Milchglas, Glass Bend, Shutter oder eine erl&#246;schende Bildr&#246;hre. Gesteuert wird alles aus der Men&#252;leiste.</dd></div>
+              <div><dt>Technik</dt><dd>SwiftUI f&#252;r die Men&#252;leiste, die Effekte laufen in Metal. Die Herausforderung: den Winkel fortlaufend auslesen und die Animation bildschirmf&#252;llend zeichnen, ohne dass Akku oder L&#252;fter es merken. Dazu ein bezahltes Produkt inklusive Review, Preisgestaltung und Verkauf im Mac App Store.</dd></div>
+              <div><dt>Stand</dt><dd>Seit November 2026 im Mac App Store, Version 1.0, ab macOS 15.</dd></div>
+            </dl>
+            <img class="detail-shot" src="/assets/img/projects/lidshift-2.jpg" width="1280" height="800" alt="LidShift: Auswahl der Effekte Glass, Glass Bend, Shutter und CRT" loading="lazy" decoding="async">
+            </details>
+          </div>
         </article>
-        <article>
-          <h3>Eigene Apps</h3>
-          <p>Alpine Swift bringt auch eigene Apps in den App Store. Die Erfahrung mit Reviews, Updates und Store-Optimierung fließt direkt in jedes Kundenprojekt.</p>
+        <article class="featured-card">
+          <div class="case-shots">
+            <img src="/assets/img/projects/pulse-orbit-1.jpg" width="598" height="1300" alt="Pulse Orbit: Raumschiff auf einer Umlaufbahn, Punkte und Level im Spielstand" loading="lazy" decoding="async">
+            <img src="/assets/img/projects/pulse-orbit-2.jpg" width="598" height="1300" alt="Pulse Orbit: Bosskampf im Orbit" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-body">
+            <p class="meta"><i class="sym app"></i>iPhone &#183; iPad &#183; Spiel</p>
+            <h3>Pulse Orbit</h3>
+            <p>Ein Finger, wechselnde Umlaufbahnen: ein Arcade-Spiel mit eigener Mechanik, Bosskämpfen und freischaltbaren Schiffen.</p>
+            <div class="chips"><span>Swift</span><span>Game Development</span><span>60 fps</span></div>
+            <p class="links"><a href="https://apps.apple.com/de/app/pulse-orbit/id6745799094">Im App Store</a></p>
+            <details class="case-detail">
+              <summary>Technik &amp; Hintergrund</summary>
+              <dl class="case-facts">
+              <div><dt>Idee</dt><dd>Ein Arcade-Spiel mit einer eigenen Mechanik: Statt zu lenken, wechselst du die Umlaufbahn. Ein Finger, eine Regel, sofort verst&#228;ndlich.</dd></div>
+              <div><dt>L&#246;sung</dt><dd>Ein Raumschiff durch Orbits steuern, Sterne sammeln, Asteroiden und Laserfallen ausweichen, neue Schiffe freischalten und gegen Bosse antreten.</dd></div>
+              <div><dt>Technik</dt><dd>Spielmechanik, Gegner und Power-ups in Swift. Ein Spiel verzeiht keine Ruckler: Jeder Frame muss sitzen, auch auf &#228;lteren iPhones. Genau diese Disziplin kommt sp&#228;ter jeder App zugute, die fl&#252;ssig scrollen soll.</dd></div>
+              <div><dt>Stand</dt><dd>Seit Oktober 2025 im App Store und seitdem bis Version 1.4.1 weiterentwickelt. Das l&#228;ngste St&#252;ck Langstrecke im eigenen Portfolio.</dd></div>
+            </dl>
+            </details>
+          </div>
         </article>
       </div>
+      <details class="more-projects">
+        <summary>Weitere Apps &amp; Open Source entdecken <span>04</span></summary>
+        <div class="projects">
+          <article class="project" data-kind="app">
+          <p class="meta"><i class="sym app"></i>iPhone · iPad · Mac</p>
+          <h3>KanToDo</h3>
+          <p>Produktivität mit Gamification: Deine To-do-Liste wird zum Kanban-Board mit XP, Coins, Streaks und Trophäen.</p>
+          <div class="chips"><span>SwiftUI</span><span>iCloud-Sync</span></div>
+          <p class="links"><a href="https://apps.apple.com/de/app/kantodo/id6775049762">Im App Store</a></p>
+        </article>
+<article class="project" data-kind="app">
+          <p class="meta"><i class="sym app"></i>iOS</p>
+          <h3>Kids Bucket List</h3>
+          <p>Familien planen gemeinsame Abenteuer, halten besondere Momente fest und blicken später darauf zurück. Mit Kinderprofilen.</p>
+          <div class="chips"><span>SwiftUI</span><span>iCloud</span></div>
+          <p class="links"><a href="https://apps.apple.com/de/app/kids-bucket-list/id6762488504">Im App Store</a></p>
+        </article>
+<article class="project" data-kind="app">
+          <p class="meta"><i class="sym app"></i>iOS · Navigation</p>
+          <h3>Weed Radar</h3>
+          <p>Die Bubatzkarte fürs iPhone: eine iOS-App zur Navigation und Lokalisierung. Seit Juni 2024 im App Store und bis heute gepflegt.</p>
+          <div class="chips"><span>Swift</span><span>Navigation</span><span>MapKit</span></div>
+          <p class="links"><a href="https://apps.apple.com/de/app/weed-radar/id6504120839">Im App Store</a></p>
+        </article>
+<article class="project" data-kind="oss">
+          <p class="meta"><i class="sym oss"></i>Swift Package</p>
+          <h3>SwiftOverpassAPI</h3>
+          <p>Swift Package für die Overpass API. Macht Geodaten-Abfragen aus OpenStreetMap in iOS-Apps einfach.</p>
+          <div class="chips"><span>Swift</span><span>SPM</span></div>
+          <p class="links"><a href="https://github.com/V4ulthunt3r/SwiftOverpassAPI">Auf GitHub</a></p>
+        </article>
+        </div>
+      </details>
     </div>
   </section>
 
-  <section class="section" id="route" data-alt="1240" aria-labelledby="route-title" style="padding-top:0">
+  <section class="section services" id="route" data-alt="1240" aria-labelledby="route-title">
     <div class="wrap">
       <div class="sec-head">
         <p class="label"><b>1.240 m</b> · Leistungen <span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span></p>
-        <h2 id="route-title">Die Route von der Idee bis zum Gipfel.</h2>
-        <p>Der Schwerpunkt liegt auf Apple-Plattformen: Swift, SwiftUI und die vollständige Begleitung bis in den App Store und darüber hinaus. Du kannst an jeder Etappe einsteigen. Manche Projekte starten bei null, andere bringen eine fertige App mit, die nur noch in den Store muss.</p>
+        <h2 id="route-title">Die passende Route für deine App.</h2>
+        <p>Ein komplettes Projekt oder Unterstützung an einer einzelnen Etappe: Wir setzen dort an, wo du gerade stehst.</p>
       </div>
-      <ol class="route-list" role="list" style="list-style:none;margin:0;padding:0">
-        <li class="stage">
+      <ol class="route-list" role="list">        <li class="stage">
           <div class="plate"><span>Konzept &amp; Prototyp</span><small>Etappe 1</small></div>
-          <div class="stage-body">
-            <h3>Erst klären, dann bauen</h3>
-            <p>Ziel, Zielgruppe und Umfang der ersten Version. Ein klickbarer Prototyp zeigt früh, ob die Idee trägt, bevor viel Budget in Code fließt.</p>
-            <div class="chips"><span>Workshop</span><span>Klick-Prototyp</span><span>Aufwandsschätzung</span></div>
-          </div>
+          <div class="stage-body"><h3>Aus einer Idee wird ein klarer Plan.</h3><p>Wir klären Zielgruppe, Kernfunktionen und den Umfang der ersten Version. Ein klickbarer Prototyp macht die Idee greifbar, bevor die Entwicklung beginnt.</p></div>
         </li>
         <li class="stage">
-          <div class="plate"><span>Native App</span><small>Etappe 2 · Schwerpunkt</small></div>
-          <div class="stage-body">
-            <h3>Swift und SwiftUI für Apple-Plattformen</h3>
-            <p>Apps für iPhone, iPad und Mac, die sich anfühlen, als hätte Apple sie gebaut. Schnell, barrierearm und nach Apples Human Interface Guidelines.</p>
-            <div class="chips"><span>iOS</span><span>iPadOS</span><span>macOS</span><span>SwiftUI</span><span>Metal</span><span>iCloud</span></div>
-          </div>
-        </li>
-        <li class="stage">
-          <div class="plate"><span>Flutter &amp; Web</span><small>Etappe 2b · ergänzend</small></div>
-          <div class="stage-body">
-            <h3>Ergänzend: wenn es überall laufen muss</h3>
-            <p>Kommt Android dazu, deckt Flutter beide Plattformen aus einer Codebasis ab. Web-Apps und Admin-Oberflächen entstehen mit Next.js und TypeScript, dazu KI-Funktionen dort, wo sie echten Nutzen bringen. Diese Leistungen ergänzen den Apple-Schwerpunkt, sie ersetzen ihn nicht.</p>
-            <div class="chips"><span>Flutter</span><span>Android</span><span>Next.js</span><span>TypeScript</span><span>KI</span></div>
-          </div>
+          <div class="plate"><span>Native Entwicklung</span><small>Etappe 2</small></div>
+          <div class="stage-body"><h3>Für iPhone, iPad und Mac gemacht.</h3><p>Swift und SwiftUI für Apps, die sich auf Apple-Geräten zuhause fühlen. Mit passender Bedienung, lokalem Speicher und iCloud, wo es zum Produkt passt.</p></div>
         </li>
         <li class="stage">
           <div class="plate"><span>Launch</span><small>Etappe 3</small></div>
-          <div class="stage-body">
-            <h3>Rein in den App Store und zu Google Play</h3>
-            <p>Review, Store-Texte, Screenshots und Veröffentlichung. Immer über deinen eigenen Developer-Account, damit die App von Anfang an dir gehört.</p>
-            <div class="chips"><span>App Store Connect</span><span>Google Play Console</span><span>ASO</span></div>
-          </div>
+          <div class="stage-body"><h3>Von der fertigen App in den Store.</h3><p>Review, Store-Texte, Screenshots und Veröffentlichung. Du kannst auch mit einer bestehenden App einsteigen, die Unterstützung beim Launch braucht.</p></div>
         </li>
         <li class="stage">
-          <div class="plate mtn"><span>Betrieb</span><small>laufend</small></div>
-          <div class="stage-body">
-            <h3>Oben bleiben</h3>
-            <p>Updates für jede neue iOS-Version, Fehlerbehebung, neue Features und Store-Optimierung. Auf der Wanderkarte ist das der rot-weiß-rot markierte Bergweg. Hier wird es anspruchsvoll, und hier trennt sich eine gute App von einer vergessenen.</p>
-            <div class="chips"><span>Updates</span><span>Monitoring</span><span>Reviews</span><span>Store-Pflege</span></div>
-          </div>
-        </li>
-      </ol>
+          <div class="plate"><span>Betreuung</span><small>Nach dem Launch</small></div>
+          <div class="stage-body"><h3>Deine App bleibt auf Kurs.</h3><p>Fehler beheben, neue Funktionen entwickeln und kommende Betriebssysteme unterstützen. Dazu Store-Pflege und Updates, passend zu deiner App.</p></div>
+        </li></ol>
+      <p class="service-note"><strong>Android oder Web dazu?</strong> Flutter, Web-Apps und Admin-Oberflächen ergänzen den Apple-Schwerpunkt, wenn dein Projekt sie braucht.</p>
+      <div class="audience compact-audience" id="fuer-wen">
+        <article><h3>Gründer &amp; Startups</h3><p>Die erste Version sinnvoll eingrenzen und zur Veröffentlichung bringen.</p></article>
+        <article><h3>Unternehmen &amp; Teams</h3><p>Apps für Kunden, interne Abläufe oder den Außendienst.</p></article>
+        <article><h3>Bestehende Apps</h3><p>Code übernehmen, den Launch begleiten oder die Weiterentwicklung sichern.</p></article>
+      </div>
     </div>
   </section>
 
@@ -151,7 +219,7 @@
     <div class="wrap">
       <div class="lh-top">
         <div>
-          <p class="label">Tachymarptis melba · Alpensegler · Englisch: Alpine Swift</p>
+          <p class="label">Alpine Swift · Der Alpensegler</p>
           <h2 id="lh-title">Gebaut für die <b>Langstrecke.</b></h2>
           <p>Ein Alpensegler bleibt über 200 Tage am Stück in der Luft. Für eine App beginnt die eigentliche Arbeit mit dem Launch: neue iOS-Versionen, Reviews, Updates und Store-Pflege. Alpine Swift bleibt dafür an Bord.</p>
         </div>
@@ -161,208 +229,11 @@
           <small>Liechti et al., Nature Communications 2013</small>
         </div>
       </div>
-      <div>
-        <div class="routes">
-          <article class="rcard">
-            <svg viewBox="0 0 300 56" preserveAspectRatio="none" aria-hidden="true"><path d="M6 48 Q 60 6 120 32" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 6" vector-effect="non-scaling-stroke"/><circle cx="6" cy="48" r="4" fill="currentColor"/><circle cx="120" cy="32" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            <p class="label">Kurzstrecke</p>
-            <h3>Launch-Service</h3>
-            <p>Deine App ist fertig oder fast fertig. Ich bringe sie in den App Store und zu Google Play.</p>
-          </article>
-          <article class="rcard">
-            <svg viewBox="0 0 300 56" preserveAspectRatio="none" aria-hidden="true"><path d="M6 48 Q 80 0 150 30 T 214 24" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 6" vector-effect="non-scaling-stroke"/><circle cx="6" cy="48" r="4" fill="currentColor"/><circle cx="214" cy="24" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            <p class="label">Mittelstrecke</p>
-            <h3>App-Komplettprojekt</h3>
-            <p>Von der Idee über Design und native Entwicklung bis zur Veröffentlichung, auf Wunsch mit Betreuung danach.</p>
-          </article>
-          <article class="rcard">
-            <svg viewBox="0 0 300 56" preserveAspectRatio="none" aria-hidden="true"><path d="M6 48 Q 66 0 124 28 T 240 26 T 294 14" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 6" vector-effect="non-scaling-stroke"/><circle cx="6" cy="48" r="4" fill="currentColor"/></svg>
-            <p class="label">Langstrecke</p>
-            <h3>Store-Management</h3>
-            <p>Laufende Betreuung deiner App: Updates, Reviews, Metadaten und Screenshots. Du kannst dich auf dein Geschäft konzentrieren.</p>
-          </article>
-        </div>
-        <p class="own"><span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span><span><b>Immer über deinen eigenen Developer-Account.</b> Du bleibst Eigentümer deiner App und aller Einnahmen.</span></p>
-      </div>
+      <p class="own"><span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span><span><b>Deine App. Dein Developer-Account.</b> Du bleibst Eigentümer deiner App und aller Einnahmen.</span></p>
     </div>
   </section>
 
-  <section class="section" id="arbeitsweise" data-alt="2010" aria-labelledby="aw-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="label"><b>2.010 m</b> · Arbeitsweise</p>
-        <h2 id="aw-title">Schneller mit KI. Gesichert am Seil.</h2>
-        <p>KI-Werkzeuge schreiben bei Alpine Swift mit. Das macht Projekte schneller und günstiger. Damit das Tempo nicht auf Kosten der Qualität geht, habe ich eigene Werkzeuge gebaut: zwei begleiten heute jedes Projekt, ein drittes ist in Arbeit.</p>
-      </div>
-      <div class="belay">
-        <p class="label">So entsteht dein Code</p>
-        <ol role="list">
-          <li><span class="belay-n">01</span><b>KI entwirft</b><p>Code, Tests und Texte entstehen mit KI-Unterstützung, auf Basis klar festgehaltener Anforderungen. Das spart Stunden bei Routinearbeit.</p></li>
-          <li><span class="belay-n">02</span><b>Scout prüft</b><p>Jeder Stand läuft durch die Qualitätsprüfung, nicht erst kurz vor dem Launch.</p></li>
-          <li><span class="belay-n">03</span><b>Ich nehme ab</b><p>Bevor etwas live geht, wird die App gegen jede Anforderung geprüft. Entscheidend ist, ob sie tut, was wir vereinbart haben. Dafür stehe ich gerade.</p></li>
-        </ol>
-      </div>
-      <div class="tools">
-        <article class="tool">
-          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/trail-light.svg" width="72" height="72" alt="App-Icon von Trail" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/trail-dark.svg" width="72" height="72" alt="" loading="lazy" decoding="async"></span>
-          <p class="meta">Projektmanagement · alle Etappen</p>
-          <h3><a href="/trail/">Trail</a></h3>
-          <p class="status live">Im Einsatz</p>
-          <p>Trail hält die Route fest: Etappen, Aufgaben und Entscheidungen. So geht zwischen zwei Terminen nichts verloren.</p>
-          <p class="gain"><b>Für dich:</b> Du weißt jederzeit, wo dein Projekt steht und was als Nächstes kommt.</p>
-          <p class="more"><a href="/trail/">Mehr zu Trail &#8594;</a></p>
-        </article>
-        <article class="tool">
-          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/scout-light.jpg" width="72" height="72" alt="App-Icon von Scout" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/scout-dark.jpg" width="72" height="72" alt="" loading="lazy" decoding="async"></span>
-          <p class="meta">Code-Qualität · Etappe 2</p>
-          <h3><a href="/scout/">Scout</a></h3>
-          <p class="status live">Im Einsatz</p>
-          <p>Der Kundschafter geht voraus. Scout untersucht den Code auf Fehlerquellen, Sicherheitslücken und Wildwuchs und zeigt, wo nachgebessert werden muss.</p>
-          <p class="gain"><b>Für dich:</b> Weniger Fehler nach dem Launch und Code, den auch andere Entwickler später übernehmen können.</p>
-          <p class="more"><a href="/scout/">Mehr zu Scout &#8594;</a></p>
-        </article>
-        <article class="tool">
-          <span class="tool-icon"><img class="ic-light" src="/assets/img/tools/beacon-light.jpg" width="72" height="72" alt="App-Icon von Beacon" loading="lazy" decoding="async"><img class="ic-dark" src="/assets/img/tools/beacon-dark.jpg" width="72" height="72" alt="" loading="lazy" decoding="async"></span>
-          <p class="meta">Store-Metadaten · Launch &amp; Betrieb</p>
-          <h3><a href="/beacon/">Beacon</a></h3>
-          <p class="status dev">In Entwicklung</p>
-          <p>Beacon entsteht als visueller Editor für App Store Connect: Store-Texte, Keywords, Screenshots und Versionen an einem Ort statt verteilt über viele Formulare.</p>
-          <p class="planned"><b>Geplant:</b> Beobachtung von Suchbegriffen, Rankings und Mitbewerbern.</p>
-          <p class="gain"><b>Für dich:</b> Heute pflege ich deinen Store-Eintrag von Hand. Beacon soll das künftig schneller und nachvollziehbarer machen.</p>
-          <p class="more"><a href="/beacon/">Mehr zu Beacon &#8594;</a></p>
-        </article>
-      </div>
-      <p class="tools-note"><span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span><span><b>Selbst gebaut, nicht zugekauft.</b> Trail und Scout begleiten heute jedes Projekt, Beacon ist in Entwicklung. Eine Veröffentlichung im App Store ist geplant, aber noch nicht terminiert.</span></p>
-    </div>
-  </section>
-
-  <section class="section" id="projekte" data-alt="2240" aria-labelledby="pr-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="label"><b>2.240 m</b> · Projekte</p>
-        <h2 id="pr-title">Eigene Apps und Werkzeuge.</h2>
-        <p>Alpine Swift baut nicht nur für Kunden. Diese Apps, Spiele und Tools sind im eigenen Studio entstanden. Drei davon im Detail: was sie lösen, wie sie gebaut sind und wo sie heute stehen.</p>
-      </div>
-      <div class="cases">
-        <article class="case">
-          <div class="case-shots">
-            <img src="/assets/img/projects/games-bucket-list-1.jpg" width="598" height="1300" alt="Games Bucket List im App Store: Bibliothek mit gespeicherten Spielen" loading="lazy" decoding="async">
-            <img src="/assets/img/projects/games-bucket-list-2.jpg" width="598" height="1300" alt="Games Bucket List: Spiele nach Status gefiltert, darunter &#8222;Geplant&#8220; und &#8222;Wird gespielt&#8220;" loading="lazy" decoding="async">
-          </div>
-          <div class="case-body">
-            <p class="meta"><i class="sym app"></i>iPhone &#183; iPad</p>
-            <h3>Games Bucket List</h3>
-            <p class="status live">Im App Store &#183; Version 1.3</p>
-            <dl class="case-facts">
-              <div><dt>Problem</dt><dd>Spieletipps kommen von &#252;berall: aus dem Chat, aus einem Video, aus einem Sale im Store. Bis abends Zeit ist, ist der Titel wieder vergessen.</dd></div>
-              <div><dt>L&#246;sung</dt><dd>Ein Ort f&#252;r alles, was noch gespielt werden soll. Aus jeder App heraus speichern, Status und Fortschritt verfolgen, Gespieltes bewerten.</dd></div>
-              <div><dt>Technik</dt><dd>SwiftUI, dazu eine Teilen-Erweiterung und Siri-Kurzbefehle, damit ein Spiel aus jeder anderen App in die Liste wandert. Die Daten liegen offline auf dem Ger&#228;t und gleichen sich &#252;ber die eigene iCloud ab, ohne Server dazwischen.</dd></div>
-              <div><dt>Stand</dt><dd>Seit September 2026 im App Store, seitdem drei Updates. Ver&#246;ffentlichung, Store-Texte und Screenshots: Alpine Swift.</dd></div>
-            </dl>
-            <div class="chips"><span>SwiftUI</span><span>iCloud</span><span>App Intents</span><span>Offline</span></div>
-            <p class="links"><a href="https://apps.apple.com/de/app/games-bucket-list/id6799535208">Im App Store</a></p>
-          </div>
-        </article>
-        <article class="case wide">
-          <div class="case-shots">
-            <img src="/assets/img/projects/lidshift-1.jpg" width="1280" height="800" alt="LidShift auf dem Mac: Men&#252;leisten-Fenster mit aktuellem Scharnierwinkel von 130 Grad" loading="lazy" decoding="async">
-            <img src="/assets/img/projects/lidshift-2.jpg" width="1280" height="800" alt="LidShift: Auswahl der Effekte Glass, Glass Bend, Shutter und CRT" loading="lazy" decoding="async">
-          </div>
-          <div class="case-body">
-            <p class="meta"><i class="sym app"></i>macOS &#183; Men&#252;leiste</p>
-            <h3>LidShift</h3>
-            <p class="status live">Im Mac App Store &#183; 3,99 &#8364;</p>
-            <dl class="case-facts">
-              <div><dt>Idee</dt><dd>Das Zuklappen des MacBooks ist der unscheinbarste Moment des Tages. LidShift macht einen kleinen Auftritt daraus.</dd></div>
-              <div><dt>L&#246;sung</dt><dd>Die App liest den echten Scharnierwinkel des MacBooks aus und legt den Effekt &#252;ber den Bildschirm: Milchglas, Glass Bend, Shutter oder eine erl&#246;schende Bildr&#246;hre. Gesteuert wird alles aus der Men&#252;leiste.</dd></div>
-              <div><dt>Technik</dt><dd>SwiftUI f&#252;r die Men&#252;leiste, die Effekte laufen in Metal. Die Herausforderung: den Winkel fortlaufend auslesen und die Animation bildschirmf&#252;llend zeichnen, ohne dass Akku oder L&#252;fter es merken. Dazu ein bezahltes Produkt inklusive Review, Preisgestaltung und Verkauf im Mac App Store.</dd></div>
-              <div><dt>Stand</dt><dd>Seit November 2026 im Mac App Store, Version 1.0, ab macOS 15.</dd></div>
-            </dl>
-            <div class="chips"><span>SwiftUI</span><span>Metal</span><span>macOS 15</span><span>Bezahl-App</span></div>
-            <p class="links"><a href="https://apps.apple.com/de/app/lidshift/id6811376384">Im Mac App Store</a></p>
-          </div>
-        </article>
-        <article class="case">
-          <div class="case-shots">
-            <img src="/assets/img/projects/pulse-orbit-1.jpg" width="598" height="1300" alt="Pulse Orbit: Raumschiff auf einer Umlaufbahn, Punkte und Level im Spielstand" loading="lazy" decoding="async">
-            <img src="/assets/img/projects/pulse-orbit-2.jpg" width="598" height="1300" alt="Pulse Orbit: Bosskampf im Orbit" loading="lazy" decoding="async">
-          </div>
-          <div class="case-body">
-            <p class="meta"><i class="sym app"></i>iPhone &#183; iPad &#183; Spiel</p>
-            <h3>Pulse Orbit</h3>
-            <p class="status live">Im App Store &#183; Version 1.4.1</p>
-            <dl class="case-facts">
-              <div><dt>Idee</dt><dd>Ein Arcade-Spiel mit einer eigenen Mechanik: Statt zu lenken, wechselst du die Umlaufbahn. Ein Finger, eine Regel, sofort verst&#228;ndlich.</dd></div>
-              <div><dt>L&#246;sung</dt><dd>Ein Raumschiff durch Orbits steuern, Sterne sammeln, Asteroiden und Laserfallen ausweichen, neue Schiffe freischalten und gegen Bosse antreten.</dd></div>
-              <div><dt>Technik</dt><dd>Spielmechanik, Gegner und Power-ups in Swift. Ein Spiel verzeiht keine Ruckler: Jeder Frame muss sitzen, auch auf &#228;lteren iPhones. Genau diese Disziplin kommt sp&#228;ter jeder App zugute, die fl&#252;ssig scrollen soll.</dd></div>
-              <div><dt>Stand</dt><dd>Seit Oktober 2025 im App Store und seitdem bis Version 1.4.1 weiterentwickelt. Das l&#228;ngste St&#252;ck Langstrecke im eigenen Portfolio.</dd></div>
-            </dl>
-            <div class="chips"><span>Swift</span><span>Game Development</span><span>60 fps</span></div>
-            <p class="links"><a href="https://apps.apple.com/de/app/pulse-orbit/id6745799094">Im App Store</a></p>
-          </div>
-        </article>
-      </div>
-      <div class="sec-head">
-        <h3 class="more-head">Weitere Projekte</h3>
-        <div class="filter" role="group" aria-label="Projekte filtern">
-          <button type="button" data-filter="all" aria-pressed="true">Alle <small></small></button>
-          <button type="button" data-filter="app" aria-pressed="false"><i class="sym app"></i>Apps <small></small></button>
-          <button type="button" data-filter="web" aria-pressed="false"><i class="sym web"></i>Web <small></small></button>
-          <button type="button" data-filter="oss" aria-pressed="false"><i class="sym oss"></i>Open Source &amp; Packages <small></small></button>
-        </div>
-      </div>
-      <div class="projects">
-        <article class="project" data-kind="app">
-          <p class="meta"><i class="sym app"></i>iPhone · iPad · Mac</p>
-          <h3>KanToDo</h3>
-          <p>Produktivität mit Gamification: Deine To-do-Liste wird zum Kanban-Board mit XP, Coins, Streaks und Trophäen.</p>
-          <div class="chips"><span>SwiftUI</span><span>iCloud-Sync</span></div>
-          <p class="links"><a href="https://apps.apple.com/de/app/kantodo/id6775049762">Im App Store</a></p>
-        </article>
-        <article class="project" data-kind="app">
-          <p class="meta"><i class="sym app"></i>iOS</p>
-          <h3>Kids Bucket List</h3>
-          <p>Familien planen gemeinsame Abenteuer, halten besondere Momente fest und blicken später darauf zurück. Mit Kinderprofilen.</p>
-          <div class="chips"><span>SwiftUI</span><span>iCloud</span></div>
-          <p class="links"><a href="https://apps.apple.com/de/app/kids-bucket-list/id6762488504">Im App Store</a></p>
-        </article>
-        <article class="project" data-kind="app">
-          <p class="meta"><i class="sym app"></i>iOS · Navigation</p>
-          <h3>Weed Radar</h3>
-          <p>Die Bubatzkarte fürs iPhone: eine iOS-App zur Navigation und Lokalisierung. Seit Juni 2024 im App Store und bis heute gepflegt.</p>
-          <div class="chips"><span>Swift</span><span>Navigation</span><span>MapKit</span></div>
-          <p class="links"><a href="https://apps.apple.com/de/app/weed-radar/id6504120839">Im App Store</a></p>
-        </article>
-        <article class="project" data-kind="web">
-          <p class="meta"><i class="sym web"></i>Web-App</p>
-          <h3>ShotForge</h3>
-          <p>Macht aus rohen App-Screenshots fertige Store-Grafiken für App Store und Google Play. Mit Vorlagen, Geräterahmen und Text, direkt im Browser.</p>
-          <div class="chips"><span>Web</span><span>ASO</span></div>
-        </article>
-        <article class="project" data-kind="oss">
-          <p class="meta"><i class="sym oss"></i>Web · Open Source</p>
-          <h3>OrgOS</h3>
-          <p>Organisationsmanagement für den Mittelstand: Organigramme, RACI-Matrizen und Prozessflüsse. Self-hosted, ohne Cloud-Abo.</p>
-          <div class="chips"><span>React</span><span>Docker</span></div>
-        </article>
-        <article class="project" data-kind="oss">
-          <p class="meta"><i class="sym oss"></i>Swift Package</p>
-          <h3>SwiftOverpassAPI</h3>
-          <p>Swift Package für die Overpass API. Macht Geodaten-Abfragen aus OpenStreetMap in iOS-Apps einfach.</p>
-          <div class="chips"><span>Swift</span><span>SPM</span></div>
-          <p class="links"><a href="https://github.com/V4ulthunt3r/SwiftOverpassAPI">Auf GitHub</a></p>
-        </article>
-        <article class="project wip" data-kind="web">
-          <p class="meta"><i class="sym web"></i>Web · KI · <em>Aufstieg läuft</em></p>
-          <h3>Vereinshelfer</h3>
-          <p>Gerade in Konzeption. Mehr dazu, sobald der Gipfel in Sicht ist.</p>
-          <div class="chips"><span>Next.js</span><span>TypeScript</span><span>KI</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="studio" data-alt="2680" aria-labelledby="st-title" style="padding-top:0">
+  <section class="section" id="studio" data-alt="2010" aria-labelledby="st-title">
     <div class="wrap studio">
       <figure class="portrait" style="margin:0">
         <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -379,18 +250,51 @@
         <figcaption>Peter Hildel · Gründer</figcaption>
       </figure>
       <div class="studio-text">
-        <p class="label"><b>2.680 m</b> · Studio</p>
-        <h2 id="st-title">Hinter Alpine Swift steht Peter Hildel.</h2>
-        <p>Ich bin Wirtschaftsinformatiker (B.Sc., TH Nürnberg) und seit über zehn Jahren in der IT zuhause. Ich entwickle native Apps für Apple-Plattformen, dazu Flutter- und Web-Apps, und setze KI-Werkzeuge gezielt ein, um schneller vom Prototyp zur fertigen App zu kommen.</p>
-        <p><strong>Bei Alpine Swift arbeitest du direkt mit mir.</strong> Kein Vertrieb dazwischen, keine Übergabe an Unbekannte. Wer dein Konzept kennt, schreibt auch den Code und kümmert sich um die Updates.</p>
+        <p class="label"><b>2.010 m</b> · Studio</p>
+        <h2 id="st-title">Dein Projekt. Mein Handwerk.</h2>
+        <p>Ich bin Peter Hildel, Wirtschaftsinformatiker (B.Sc., TH Nürnberg) und seit über zehn Jahren in der IT zuhause. Mit Alpine Swift entwickle ich native Apps und begleite sie vom ersten Konzept bis zu den Updates nach dem Launch.</p>
+        <p><strong>Du arbeitest direkt mit mir.</strong> Wer dein Konzept kennt, schreibt auch den Code, beantwortet deine Fragen und kümmert sich um die Weiterentwicklung.</p>
         <dl class="facts">
           <div><dt>Basis</dt><dd>Zirndorf bei Nürnberg</dd></div>
           <div><dt>Plattformen</dt><dd>iOS, iPadOS, macOS, Android, Web</dd></div>
-          <div><dt>Werkzeuge</dt><dd>Swift, SwiftUI, Metal, SpriteKit, Flutter, Next.js</dd></div>
-          <div><dt>Ausbildung</dt><dd>B.Sc. Wirtschaftsinformatik</dd></div>
         </dl>
         <p>Persönliche Seite: <a class="textlink" href="https://hildel.com" rel="me">hildel.com</a></p>
       </div>
+    </div>
+  </section>
+
+  <section class="section approach" id="arbeitsweise" data-alt="2240" aria-labelledby="aw-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><b>2.240 m</b> · Arbeitsweise</p>
+        <h2 id="aw-title">Klare Schritte. Saubere Übergaben.</h2>
+        <p>Du bekommst Einblick in den Fortschritt und Code, an dem sich weiterarbeiten lässt. Die Werkzeuge unterstützen dabei; dein Ansprechpartner bleibe ich.</p>
+      </div>
+      <div class="belay"><ol role="list"><li><span class="belay-n">01</span><b>Gemeinsam planen</b><p>Anforderungen und Entscheidungen sind festgehalten. Du weißt, was als Nächstes entsteht.</p></li>
+<li><span class="belay-n">02</span><b>Laufend prüfen</b><p>Code-Prüfungen und Tests begleiten die Entwicklung. KI unterstützt bei Routinearbeit.</p></li>
+<li><span class="belay-n">03</span><b>Persönlich abnehmen</b><p>Ich prüfe die App gegen die vereinbarten Anforderungen. Architektur, Abnahme und Verantwortung liegen bei mir.</p></li></ol></div>
+      <details class="work-tools">
+        <summary>Ein Blick auf meine eigenen Werkzeuge</summary>
+        <div class="work-tool-grid"><a class="work-tool" href="/trail/"><span>Trail <span aria-hidden="true">↗</span></span><b>Planung &amp; Entscheidungen</b><small>Aufgaben und Projektfortschritt nachvollziehbar festhalten. Im Einsatz.</small></a>
+<a class="work-tool" href="/scout/"><span>Scout <span aria-hidden="true">↗</span></span><b>Code-Qualität</b><small>Code auf Fehlerquellen und Wartbarkeit prüfen. Im Einsatz.</small></a>
+<a class="work-tool" href="/beacon/"><span>Beacon <span aria-hidden="true">↗</span></span><b>Store-Pflege</b><small>Store-Texte und Screenshots an einem Ort. In Entwicklung.</small></a></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section getting-started" id="fragen" data-alt="2680" aria-labelledby="start-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><b>2.680 m</b> · Zusammenarbeit</p>
+        <h2 id="start-title">So starten wir.</h2>
+      </div>
+      <ol class="start-steps" role="list"><li><span class="label">01</span><h3>Du erzählst von deiner App.</h3><p>Idee oder bestehende App, Zielgruppe und gewünschter Zeitrahmen. Ein fertiges Konzept brauchst du dafür nicht.</p></li>
+<li><span class="label">02</span><h3>Wir klären die offenen Fragen.</h3><p>In einem ersten Gespräch schauen wir auf Ziele, Machbarkeit und den sinnvollen nächsten Schritt.</p></li>
+<li><span class="label">03</span><h3>Du bekommst eine klare Grundlage.</h3><p>Für einen vereinbarten Umfang erstelle ich eine Aufwandsschätzung und ein Angebot. Dann entscheidest du.</p></li></ol>
+      <div class="faq-list" aria-label="Häufige Fragen"><details><summary>Kannst du eine bestehende App übernehmen?</summary><p>Ja. Wir schauen zuerst auf den vorhandenen Code, die Zugänge und deine Ziele. Danach lässt sich einschätzen, ob es um einzelne Korrekturen, den Launch oder die laufende Weiterentwicklung geht.</p></details>
+<details><summary>Was kostet die Entwicklung einer App?</summary><p>Das hängt vom Umfang, den Plattformen und vorhandenen Grundlagen ab. Nach der ersten Klärung bekommst du eine Aufwandsschätzung. Wenn du einen Budgetrahmen hast, nenn ihn gern direkt, damit wir die erste Version passend zuschneiden können.</p></details>
+<details><summary>Wem gehören App, Code und Store-Account?</summary><p>Veröffentlicht wird über deinen eigenen Developer-Account. Du bleibst Eigentümer deiner App und aller Einnahmen. Code-Übergabe, Zugänge und Nutzungsrechte halten wir im Angebot fest.</p></details>
+<details><summary>Was passiert nach der Veröffentlichung?</summary><p>Auf Wunsch betreue ich die App weiter: Fehlerbehebung, Betriebssystem-Updates, neue Funktionen und Store-Pflege. Den Umfang vereinbaren wir passend zu deinem Projekt.</p></details></div>
     </div>
   </section>
 
@@ -399,11 +303,12 @@
       <div class="summit-text">
         <p class="label"><b>2.962 m</b> · Gipfel <span class="rwr" aria-hidden="true"><i></i><i></i><i></i></span></p>
         <h2 id="ko-title">Lass uns über deine App sprechen.</h2>
-        <p>Erzähl kurz, worum es geht: Idee, Zielgruppe, Zeitrahmen. Du bekommst eine ehrliche Einschätzung, auch wenn die Antwort „noch nicht“ lautet.</p>
+        <p>Erzähl mir von deiner Idee oder deiner bestehenden App. Gemeinsam finden wir heraus, was der nächste sinnvolle Schritt ist.</p>
         <div class="mail">
-          <a class="addr" href="mailto:info@hildel.com?subject=Projektanfrage%20Alpine%20Swift">info@hildel.com</a>
-          <button class="btn" type="button" data-copy="info@hildel.com" data-done="Kopiert"><span>Adresse kopieren</span></button>
+          <a class="addr" href="mailto:info@alpineswift.dev?subject=Projektanfrage%20Alpine%20Swift">info@alpineswift.dev</a>
+          <button class="btn" type="button" data-copy="info@alpineswift.dev" data-done="Kopiert"><span>Adresse kopieren</span></button>
         </div>
+        <p class="support-contact">Du nutzt bereits eine meiner Apps?<br><a href="mailto:support@alpineswift.dev">Zum App-Support · support@alpineswift.dev</a></p>
       </div>
       <svg class="summit-logo" viewBox="40 60 1180 1080" aria-hidden="true" data-logo-anim>
         <defs><clipPath id="logo-clip"><rect class="la-clip" x="-200" y="560" width="1654" height="700"/></clipPath></defs>
@@ -430,6 +335,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/site.js?v=9ba0d818b2" defer></script>
 </body>
 </html>

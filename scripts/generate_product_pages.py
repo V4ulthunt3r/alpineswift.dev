@@ -6,7 +6,7 @@ import os, sys
 
 ROOT = sys.argv[1]
 SITE = "https://alpineswift.dev"
-MAIL = "info@hildel.com"
+MAIL = "info@alpineswift.dev"
 
 ICONS = {
     "trail": ("/assets/img/tools/trail-light.svg", "/assets/img/tools/trail-dark.svg"),

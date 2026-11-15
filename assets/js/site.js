@@ -184,7 +184,9 @@
       // the hero summit is the same summit as the contact section (data-alt of the last stop)
       const label = m < .5 ? `${cv.dataset.peak}  ${fmt(summitAlt)} m` : cv.dataset.icon;
       const lw = ctx.measureText(label).width;
-      ctx.fillText(label, px + 12 + lw > W - 8 ? px - 12 - lw : px + 12, py + 4);
+      const labelX = W < 480 ? clamp(px - lw / 2, 8, Math.max(8, W - lw - 8))
+        : px + 12 + lw > W - 8 ? px - 12 - lw : px + 12;
+      ctx.fillText(label, labelX, W < 480 ? py - 16 : py + 4);
       ctx.restore();
 
       if (flight) {
@@ -474,6 +476,13 @@
     });
     nav.addEventListener('click', e => {
       if (e.target.closest('a')) { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.focus();
+      }
     });
   }
 
