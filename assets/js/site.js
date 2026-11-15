@@ -234,7 +234,9 @@
     const stops = document.querySelectorAll('[data-alt]');
     const summitAlt = stops.length ? +stops[stops.length - 1].dataset.alt : 2962;
     function progress() {
-      const r = hero.getBoundingClientRect(), span = r.height - innerHeight;
+      const r = hero.getBoundingClientRect();
+      const stick = hero.querySelector('.hero-stick');
+      const span = r.height - (stick ? stick.getBoundingClientRect().height : innerHeight);
       return span > 0 ? clamp(-r.top / span, 0, 1) : 0;
     }
     function frame(dt) {
@@ -432,9 +434,40 @@
   /* ---------- Altimeter ---------- */
   const alti = document.querySelector('.altimeter');
   const stops = [...document.querySelectorAll('[data-alt]')];
+  const ascentTrail = document.querySelector('.ascent-trail');
+  const trailStops = ascentTrail ? stops.slice(1) : [];
+  const trailNodes = trailStops.map(stop => {
+    const node = document.createElement('span');
+    node.className = 'ascent-trail-stop';
+    if (stop.matches('.longhaul, .summit')) node.classList.add('on-sky');
+    ascentTrail.appendChild(node);
+    return node;
+  });
+  let trailPoints = [];
+  function layoutTrail() {
+    if (!ascentTrail || !trailStops.length) return;
+    const mainTop = ascentTrail.parentElement.getBoundingClientRect().top + scrollY;
+    trailPoints = trailStops.map(stop => {
+      const label = stop.querySelector('.label') || stop;
+      const r = label.getBoundingClientRect();
+      return r.top + scrollY + Math.min(r.height / 2, 10);
+    });
+    const start = trailPoints[0], height = trailPoints[trailPoints.length - 1] - start;
+    ascentTrail.style.top = (start - mainTop) + 'px';
+    ascentTrail.style.height = height + 'px';
+    const sky = document.querySelector('.longhaul').getBoundingClientRect();
+    const summit = document.querySelector('.summit').getBoundingClientRect();
+    ascentTrail.style.setProperty('--sky-start', (sky.top + scrollY - start) + 'px');
+    ascentTrail.style.setProperty('--sky-end', (sky.bottom + scrollY - start) + 'px');
+    ascentTrail.style.setProperty('--summit-start', (summit.top + scrollY - start) + 'px');
+    trailNodes.forEach((node, i) => { node.style.top = (trailPoints[i] - start) + 'px'; });
+    ascentTrail.classList.add('ready');
+  }
   function updateAlti() {
     if (!alti || !stops.length) return;
-    const y = scrollY + innerHeight * .5, tops = stops.map(el => el.getBoundingClientRect().top + scrollY);
+    // Start at the trailhead; the reading then follows the upper part of the viewport.
+    const y = scrollY + Math.min(scrollY, innerHeight * .35);
+    const tops = stops.map(el => el.getBoundingClientRect().top + scrollY);
     const atBottom = scrollY + innerHeight >= document.documentElement.scrollHeight - 4;
     let alt = +stops[0].dataset.alt;
     if (atBottom) alt = +stops[stops.length - 1].dataset.alt;
@@ -444,12 +477,24 @@
       alt = next ? a + (+next.dataset.alt - a) * clamp((y - tops[i]) / (tops[i + 1] - tops[i]), 0, 1) : a;
     }
     const lo = +stops[0].dataset.alt, hi = +stops[stops.length - 1].dataset.alt;
-    alti.querySelector('b').textContent = fmt(Math.round(alt / 10) * 10);
-    // hide over the footer, and on phones while the hero card (with its buttons) fills the screen
+    alti.querySelector('b').textContent = fmt(atBottom ? hi : Math.round(alt / 10) * 10);
+    // The mobile header strip stays visible, including at the trailhead and summit.
     const foot = document.querySelector('.site-footer');
+    const inHeader = document.body.classList.contains('home') && innerWidth <= 860;
     const inHero = innerWidth < 560 && Topo && Topo.el.getBoundingClientRect().bottom > innerHeight;
-    alti.classList.toggle('away', (!!foot && foot.getBoundingClientRect().top < innerHeight) || !!inHero);
+    alti.classList.toggle('away', !inHeader && ((!!foot && foot.getBoundingClientRect().top < innerHeight) || !!inHero));
     alti.style.setProperty('--p', ((alt - lo) / (hi - lo) * 100).toFixed(1) + '%');
+    if (ascentTrail && trailPoints.length) {
+      const start = trailPoints[0], end = trailPoints[trailPoints.length - 1];
+      ascentTrail.style.setProperty('--trail-progress', (clamp((y - start) / (end - start), 0, 1) * 100).toFixed(2) + '%');
+      trailNodes.forEach((node, i) => node.classList.toggle('reached', y >= trailPoints[i]));
+    }
+  }
+  layoutTrail();
+  if (ascentTrail) {
+    const refreshTrail = () => { layoutTrail(); updateAlti(); };
+    new ResizeObserver(refreshTrail).observe(ascentTrail.parentElement);
+    document.fonts && document.fonts.ready.then(refreshTrail);
   }
 
   /* ---------- Header, nav, copy ---------- */
