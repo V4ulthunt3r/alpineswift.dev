@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /brand/
+Disallow: /scripts/
+
+Sitemap: https://alpineswift.dev/sitemap.xml

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://alpineswift.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/trail/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/trail/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/trail/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/trail/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/en/trail/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/trail/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/trail/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/trail/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/scout/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/scout/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/scout/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/scout/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/en/scout/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/scout/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/scout/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/scout/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/beacon/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/beacon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/beacon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/beacon/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/en/beacon/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/beacon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/beacon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/beacon/"/>
+  </url>
+</urlset>

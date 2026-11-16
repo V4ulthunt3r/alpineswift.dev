@@ -88,7 +88,7 @@
     // marching-squares segments per case; edges: 0 top, 1 right, 2 bottom, 3 left
     const SEG = [[], [3, 2], [2, 1], [3, 1], [0, 1], [3, 0, 2, 1], [0, 2], [3, 0], [3, 0], [0, 2], [0, 1, 3, 2], [0, 1], [3, 1], [2, 1], [3, 2], []];
     const trail = [[.34, 1.03], [.44, .9], [.55, .84], [.48, .76], [.6, .7], [.54, .62], [.64, .56]];
-    let ctx, W = 0, H = 0, s, cols, rows, field, t = 0, m = 0, mouse = null, cx = .66;
+    let ctx, W = 0, H = 0, s, cols, rows, field, t = 0, m = 0, mouse = null, cx = .66, cy = .44, iy = .46, ib = .32;
     // intro: contours appear from the summit down, then the trail draws itself up
     let intro = reduce ? 1 : 0;
     // now and then a single swift crosses the map
@@ -101,10 +101,21 @@
       rows = Math.ceil(H / s) + 1;
       field = new Float32Array(cols * rows);
       // on narrow screens the peak sits above the copy card instead of beside it
-      cx = W < 760 ? .5 : W < 1100 ? .72 : .66;
+      const narrow = W < 760;
+      cx = narrow ? .5 : W < 1100 ? .72 : .66;
+      cy = narrow ? .25 : .44; iy = narrow ? .25 : .46; ib = narrow ? .15 : W < 1100 ? .27 : .32;
+      if (narrow) {
+        // phones: centre the peak and the app icon in the free window between the header strip and the copy card
+        const card = hero.querySelector('.hero-card'), head = document.querySelector('.site-header'), bar = document.querySelector('.altimeter');
+        const barB = bar ? bar.getBoundingClientRect().bottom : 0;
+        const top = Math.max(head ? head.getBoundingClientRect().bottom : 0, barB < innerHeight / 2 ? barB : 0);
+        const free = (card ? card.getBoundingClientRect().top - cv.getBoundingClientRect().top : 0) - top;
+        // the icon's outermost contour lies at about 1.56 * ib
+        if (free > 90) { cy = iy = (top + free / 2) / H; ib = clamp((free / 2 - 10) / (1.56 * H), .04, .15); }
+      }
     }
     function height(u, v) {
-      const a = W / H, px = (u - cx) * a, py = v - (W < 760 ? .25 : .44);
+      const a = W / H, px = (u - cx) * a, py = v - cy;
       let h = .92 * Math.exp(-(px * px * 1.3 + py * py) / .06)
         + .5 * Math.exp(-((px + .42) ** 2 + (py - .12) ** 2) / .045)
         + .38 * Math.exp(-((px - .3) ** 2 + (py + .2) ** 2) / .03)
@@ -112,8 +123,8 @@
         + .16 * noise(u * 4 * a + t, v * 4) + .07 * noise(u * 10 * a, v * 10 + t * .5)
         + .09 * (1 - Math.abs(noise(u * 7 * a - t, v * 7) * 2 - 1)) * Math.exp(-(px * px + py * py) / .15);
       if (m > 0) {
-        const b = W < 760 ? .15 : W < 1100 ? .27 : .32;
-        const dx = Math.abs((u - cx) * a) / b, dy = Math.abs(v - (W < 760 ? .25 : .46)) / b;
+        const b = ib;
+        const dx = Math.abs((u - cx) * a) / b, dy = Math.abs(v - iy) / b;
         const d = Math.pow(dx ** 5 + dy ** 5, .2);
         const icon = Math.min(.9, Math.max(0, 1.02 - .62 * d)) + .02 * noise(u * 9 * a, v * 9 + t);
         h = h * (1 - m) + icon * m;
@@ -418,7 +429,7 @@
     rz = setTimeout(() => scenes.forEach(sc => { sc.resize(); sc.draw(); }), 120);
   });
   document.addEventListener('themechange', () => { readColors(); scenes.forEach(sc => sc.draw()); });
-  document.fonts && document.fonts.ready.then(() => Topo && Topo.draw());
+  document.fonts && document.fonts.ready.then(() => { if (Topo) { Topo.resize(); Topo.draw(); } });
 
   if (!reduce) {
     let last = performance.now();
