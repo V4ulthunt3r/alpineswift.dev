@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Writes the static product pages /trail/, /scout/, /beacon/ (DE) and /en/... (EN).
+"""Writes the static product pages /trail/, /scout/, /vista/, /beacon/ (DE) and /en/... (EN).
 Usage: python3 scripts/generate_product_pages.py .   (run from the repo root, then commit the HTML)
 The output is plain HTML; the site itself has no build step."""
 import os, sys
@@ -11,10 +11,11 @@ MAIL = "info@alpineswift.dev"
 ICONS = {
     "trail": ("/assets/img/tools/trail-light.svg", "/assets/img/tools/trail-dark.svg"),
     "scout": ("/assets/img/tools/scout-light.jpg", "/assets/img/tools/scout-dark.jpg"),
+    "vista": ("/assets/img/tools/vista-light.jpg", "/assets/img/tools/vista-dark.jpg"),
     "beacon": ("/assets/img/tools/beacon-light.jpg", "/assets/img/tools/beacon-dark.jpg"),
 }
-ORDER = ["trail", "scout", "beacon"]
-NAMES = {"trail": "Trail", "scout": "Scout", "beacon": "Beacon"}
+ORDER = ["trail", "scout", "vista", "beacon"]
+NAMES = {"trail": "Trail", "scout": "Scout", "vista": "Vista", "beacon": "Beacon"}
 
 UI = {
     "de": {
@@ -22,13 +23,13 @@ UI = {
         "studio": "Studio", "interest": "Interesse melden", "menu": "Menü", "nav_label": "Hauptnavigation",
         "brand_label": "Alpine Swift, zur Startseite",
         "theme_label": "Farbschema: Automatisch (System). Wechseln",
-        "icon_alt": "App-Icon von {n}", "tools_of": "Werkzeug {i} / 03",
+        "icon_alt": "App-Icon von {n}", "tools_of": "Werkzeug {i} / 04",
         "why": "Warum {n}", "features": "Funktionen", "features_h": "Was {n} kann.",
-        "principles_label": "Für alle drei Werkzeuge",
+        "principles_label": "Für alle vier Werkzeuge",
         "principles_h": "Gebaut wie unsere Apps.",
         "spec_label": "Steckbrief", "spec_h": "{n} auf einen Blick.",
-        "team_label": "Die Seilschaft", "team_h": "Drei Werkzeuge, eine Route.",
-        "team_p": "Trail plant, Scout prüft, Beacon bringt die App in den Store. Jedes Werkzeug funktioniert für sich, zusammen decken sie den Weg vom ersten Ticket bis zum fertigen Store-Eintrag ab.",
+        "team_label": "Die Seilschaft", "team_h": "Vier Werkzeuge, eine Route.",
+        "team_p": "Trail plant, Scout prüft, Vista gestaltet die Screenshots, Beacon bringt die App in den Store. Jedes Werkzeug funktioniert für sich, zusammen decken sie den Weg vom ersten Ticket bis zum fertigen Store-Eintrag ab.",
         "here": "Du bist hier",
         "cta_label": "Interesse",
         "copy": "Adresse kopieren", "copied": "Kopiert",
@@ -47,13 +48,13 @@ UI = {
         "studio": "Studio", "interest": "Register interest", "menu": "Menu", "nav_label": "Main navigation",
         "brand_label": "Alpine Swift, to the home page",
         "theme_label": "Colour scheme: Automatic (system). Change",
-        "icon_alt": "{n} app icon", "tools_of": "Tool {i} / 03",
+        "icon_alt": "{n} app icon", "tools_of": "Tool {i} / 04",
         "why": "Why {n}", "features": "Features", "features_h": "What {n} does.",
-        "principles_label": "Shared by all three tools",
+        "principles_label": "Shared by all four tools",
         "principles_h": "Built like our apps.",
         "spec_label": "Fact sheet", "spec_h": "{n} at a glance.",
-        "team_label": "The rope team", "team_h": "Three tools, one route.",
-        "team_p": "Trail plans, Scout checks, Beacon takes the app to the store. Each tool works on its own; together they cover the way from the first ticket to a finished store listing.",
+        "team_label": "The rope team", "team_h": "Four tools, one route.",
+        "team_p": "Trail plans, Scout checks, Vista designs the screenshots, Beacon takes the app to the store. Each tool works on its own; together they cover the way from the first ticket to a finished store listing.",
         "here": "You are here",
         "cta_label": "Interest",
         "copy": "Copy address", "copied": "Copied",
@@ -149,7 +150,7 @@ P = {
         },
     },
     "scout": {
-        "rot": 120,
+        "rot": 90,
         "path": "M410 410 C 360 380, 370 330, 310 320 S 260 290, 272 250",
         "de": {
             "title": "Scout · Qualitätsprüfung für Swift-Projekte · Alpine Swift",
@@ -226,13 +227,91 @@ P = {
             "subject": "Interested in Scout",
         },
     },
+    "vista": {
+        "rot": 180,
+        "path": "M250 410 C 205 385, 255 350, 218 328 S 192 300, 198 288",
+        "de": {
+            "title": "Vista · App-Store-Screenshots und Marketingvideos für Indie-Entwickler · Alpine Swift",
+            "desc": "Vista ist ein natives Screenshot-Studio für den Mac: gestaltete App-Store-Bilder und kurze Videos aus deinen App-Screenshots, in allen Sprachen und Formaten, lokal gerendert und auf Wunsch direkt zu App Store Connect hochgeladen. Ein Werkzeug von Alpine Swift.",
+            "label": "Werkzeug 03 · Gestalten",
+            "tagline": "Store-Screenshots, <em>die deine App zeigen.</em>",
+            "lede": "Vista macht aus rohen App-Screenshots fertige Bildserien für den App Store: mit Headlines, Geräteansichten, Hintergründen und Panoramen, in jeder Sprache und jedem Format. Nativ auf dem Mac, gerendert ohne Web-Runtime und auf Wunsch direkt zu App Store Connect hochgeladen.",
+            "status": ("dev", "In Entwicklung"),
+            "platforms": ["Mac", "App Store Connect", "fastlane"],
+            "corner": "Etappe 3 · Launch",
+            "meta": "Gestalten · Launch",
+            "short": "Store-Screenshots und Videos gestalten.",
+            "why_h": "Die ersten Bilder entscheiden.",
+            "why_p": "Im App Store schauen die meisten nur auf die Screenshots, bevor sie laden oder weiterscrollen. Sie für mehrere Gerätegrößen und Sprachen zu bauen und bei jedem Update zu erneuern, kostet ohne passendes Werkzeug schnell Tage in Design-Programmen.",
+            "why": [
+                ("Einmal gestalten, überall ausgeben", "Ein Projekt enthält alle Store-Formate und Sprachen. Texte gelten gemeinsam, Layout-Anpassungen pro Format bleiben getrennt."),
+                ("Texte, die passen", "Vista prüft jede Sprache auf abgeschnittene oder überlappende Texte und verkleinert zu große Schriften auf Wunsch, mit einer Liste aller Änderungen."),
+                ("Neue Screens ohne Neuanfang", "Wiederholbare Simulator-Aufnahmen holen aktuelle Screens in jeder Sprache. Texte und Layouts bleiben, wie sie sind."),
+            ],
+            "features": [
+                ("Vorlagen und Looks", "Neun Vorlagen von Feature Story bis Panorama und 46 Looks. Geräte, Verläufe, eigene Hintergründe und Zoom-Lupen direkt auf der Leinwand bearbeiten, mit Rückgängig für jeden Schritt."),
+                ("Lokalisierung mit Vorschau", "Alle Sprachen nebeneinander, mit Fortschritt, Filtern für fehlende oder zu lange Texte und Live-Vorschau. Austausch per JSON mit Übersetzern und Werkzeugen."),
+                ("Export für Store und fastlane", "PNG oder JPEG für ausgewählte Formate und Sprachen, Panoramen sauber in Einzelbilder geteilt. Auf Wunsch in der Ordnerstruktur von fastlane."),
+                ("Direkt zu App Store Connect", "Mit deinem eigenen API-Schlüssel: Vista prüft die Maße gegen Apples aktuelle Vorgaben und zeigt vor dem Upload eine Vorschau. Zur App-Prüfung eingereicht wird nichts."),
+                ("Kurze Marketingvideos", "Aus den fertigen Screens wird eine Szenenfolge mit Zoom, Einblendung und Überblendung, exportiert als MP4 in HD oder Full HD."),
+                ("KI-Studio auf dem Gerät", "Auf unterstützten Macs mit macOS 26 schlägt Apples lokales Modell Story, Texte und Farbkonzept aus deinen Screenshots vor. Kein Cloud-KI-Anbieter, alles bleibt bearbeitbar."),
+            ],
+            "assist": "Gibst du ein gespeichertes Projekt unter <i>Ablage → Lokale Assistenten</i> frei, öffnet Vista einen lokalen MCP-Zugang ohne Fenster. Ein Assistent kann die Screen-Texte lesen, prüfen und Verbesserungen vorschlagen. Übernommen wird erst, wenn du den Vorschlag in Vista annimmst. Export und Upload bleiben bei dir.",
+            "spec": [
+                ("Plattform", "Mac ab macOS 14", "KI-Studio ab macOS 26 auf unterstützten Geräten. Eine iPad-Version ist als Prototyp in Arbeit."),
+                ("Ausgabe", "PNG, JPEG und MP4 für die App-Store-Formate", "Eigene Formate von 64 bis 8192 Pixel"),
+                ("Anbindungen", "App Store Connect über deinen eigenen API-Schlüssel", "GitHub (nur lesend), fastlane-Ordnerstruktur und lokale KI-Assistenten über MCP"),
+                ("Stand", "In Entwicklung", "Eine Veröffentlichung ist geplant, aber noch nicht terminiert."),
+            ],
+            "cta_h": "Sag Bescheid, wenn du Vista testen willst.",
+            "cta_p": "Vista ist noch in Entwicklung. Schreib mir kurz, für welche Apps du Screenshots baust. Sobald eine Testphase startet, melde ich mich. Kein Newsletter, nur eine Mail, wenn es so weit ist.",
+            "subject": "Interesse an Vista",
+        },
+        "en": {
+            "title": "Vista · App Store screenshots and marketing videos for indie developers · Alpine Swift",
+            "desc": "Vista is a native screenshot studio for the Mac: designed App Store images and short videos from your app screenshots, in every language and format, rendered locally and uploaded straight to App Store Connect if you like. A tool by Alpine Swift.",
+            "label": "Tool 03 · Design",
+            "tagline": "Store screenshots <em>that show your app.</em>",
+            "lede": "Vista turns raw app screenshots into finished image series for the App Store: with headlines, device frames, backgrounds and panoramas, in every language and format. Native on the Mac, rendered without a web runtime and uploaded straight to App Store Connect if you like.",
+            "status": ("dev", "In development"),
+            "platforms": ["Mac", "App Store Connect", "fastlane"],
+            "corner": "Stage 3 · Launch",
+            "meta": "Design · launch",
+            "short": "Design store screenshots and videos.",
+            "why_h": "The first images decide.",
+            "why_p": "In the App Store, most people only look at the screenshots before they download or scroll on. Building them for several device sizes and languages, and redoing them for every update, quickly eats days in design tools without the right workflow.",
+            "why": [
+                ("Design once, export everywhere", "One project holds every store format and language. Copy is shared; layout tweaks per format stay separate."),
+                ("Copy that fits", "Vista checks every language for clipped or overlapping text and can shrink oversized type for you, with a list of every change."),
+                ("Fresh screens, no fresh start", "Repeatable simulator captures bring in current screens in every language. Copy and layouts stay as they are."),
+            ],
+            "features": [
+                ("Templates and looks", "Nine templates from Feature Story to Panorama and 46 looks. Edit devices, gradients, your own backgrounds and zoom callouts right on the canvas, with undo for every step."),
+                ("Localisation with preview", "Every language side by side, with progress, filters for missing or overlong copy and a live preview. JSON exchange with translators and tools."),
+                ("Export for the store and fastlane", "PNG or JPEG for selected formats and languages, panoramas cleanly split into single images. Optionally in fastlane's folder structure."),
+                ("Straight to App Store Connect", "With your own API key: Vista checks dimensions against Apple's current specs and shows a preview before uploading. Nothing is submitted for App Review."),
+                ("Short marketing videos", "Your finished screens become a scene sequence with zoom, rise and fade, exported as MP4 in HD or Full HD."),
+                ("On-device AI studio", "On supported Macs with macOS 26, Apple's local model proposes story, copy and colour concept from your screenshots. No cloud AI provider; everything stays editable."),
+            ],
+            "assist": "Once you share a saved project with local assistants from the File menu, Vista opens a windowless local MCP connection. An assistant can read the screen copy, check it and suggest improvements. Nothing is applied until you accept the proposal in Vista. Export and upload stay with you.",
+            "spec": [
+                ("Platform", "Mac on macOS 14 or later", "AI studio on macOS 26 or later on supported devices. An iPad version is in progress as a prototype."),
+                ("Output", "PNG, JPEG and MP4 for the App Store formats", "Custom formats from 64 to 8192 pixels"),
+                ("Integrations", "App Store Connect through your own API key", "GitHub (read-only), fastlane folder structure and local AI assistants via MCP"),
+                ("Status", "In development", "A release is planned, but not yet scheduled."),
+            ],
+            "cta_h": "Let me know if you want to try Vista.",
+            "cta_p": "Vista is still in development. Drop me a line about the apps you build screenshots for. As soon as a test phase starts, I will get in touch. No newsletter, just one email when it is time.",
+            "subject": "Interested in Vista",
+        },
+    },
     "beacon": {
-        "rot": 240,
+        "rot": 270,
         "path": "M200 -10 C 240 30, 190 60, 230 90 S 210 110, 200 116",
         "de": {
             "title": "Beacon · App-Store-Metadaten und ASO für Indie-Entwickler · Alpine Swift",
             "desc": "Beacon ist ein nativer Arbeitsplatz für deinen App-Store-Auftritt: Texte, Keywords, Screenshots, Releases und Bewertungen an einem Ort, verbunden mit App Store Connect. Ein Werkzeug von Alpine Swift.",
-            "label": "Werkzeug 03 · Veröffentlichen",
+            "label": "Werkzeug 04 · Veröffentlichen",
             "tagline": "Dein App-Store-Auftritt <em>an einem Ort.</em>",
             "lede": "Beacon ist ein Arbeitsplatz für alles, was im App Store sichtbar ist: Texte, Keywords, Screenshots, Versionen und Bewertungen. Nativ auf dem Mac, dazu iPhone und iPad, verbunden mit App Store Connect über deinen eigenen Zugang.",
             "status": ("dev", "In Entwicklung"),
@@ -269,7 +348,7 @@ P = {
         "en": {
             "title": "Beacon · App Store metadata and ASO for indie developers · Alpine Swift",
             "desc": "Beacon is a native workspace for your App Store presence: copy, keywords, screenshots, releases and reviews in one place, connected to App Store Connect. A tool by Alpine Swift.",
-            "label": "Tool 03 · Publish",
+            "label": "Tool 04 · Publish",
             "tagline": "Your App Store presence <em>in one place.</em>",
             "lede": "Beacon is a workspace for everything people see in the App Store: copy, keywords, screenshots, versions and reviews. Native on the Mac, plus iPhone and iPad, connected to App Store Connect through your own access.",
             "status": ("dev", "In development"),

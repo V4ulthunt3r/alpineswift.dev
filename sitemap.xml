@@ -37,6 +37,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/scout/"/>
   </url>
   <url>
+    <loc>https://alpineswift.dev/vista/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/vista/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/vista/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/vista/"/>
+  </url>
+  <url>
+    <loc>https://alpineswift.dev/en/vista/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/vista/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/vista/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alpineswift.dev/vista/"/>
+  </url>
+  <url>
     <loc>https://alpineswift.dev/beacon/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://alpineswift.dev/beacon/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://alpineswift.dev/en/beacon/"/>
